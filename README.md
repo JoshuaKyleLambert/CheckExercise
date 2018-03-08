@@ -19,7 +19,12 @@ https://liveexample.pearsoncmg.com/CheckExercise/faces/CheckExercise.xhtml
 
 How to get all exercises? 
 We will discuss it in details in the class.
-The exercisedescription folder contains all exercise descriptions. Each file in the folder is for one exercise. If the file contains the text “This exercise can be compiled and submitted, but cannot be run and automatically graded.”, the exercise cannot be auto-graded.
+The exercisedescription folder contains all exercise descriptions. 
+Each file in the folder is for one exercise. If the file contains the text 
+
+“This exercise can be compiled and submitted, but cannot be run and automatically graded.”, 
+
+the exercise cannot be auto-graded.
 Put exercisedescription in c:\ags10e\exercisedescription
 Download it from www.cs.armstrong.edu/liang/ags10e.zip 
 

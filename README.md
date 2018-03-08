@@ -30,6 +30,7 @@ Download it from www.cs.armstrong.edu/liang/ags10e.zip
 
 
 How to grade an exercise?
+
 We will discuss it in details in the class.
 The gradeexercise folder contains all exercise grading input and output files. 
 

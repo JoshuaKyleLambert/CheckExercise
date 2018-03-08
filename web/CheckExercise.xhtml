@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <!--Usage: http://localhost:8080/LiveRun/faces/TestExercise.xhtml?programName=Exercise02_02&amp;chapter=Chapter%202&amp;chapterSelectable=false--><head><link type="text/css" rel="stylesheet" href="/CheckExercise/faces/javax.faces.resource/theme.css?ln=primefaces-aristo" /><script type="text/javascript" src="/CheckExercise/faces/javax.faces.resource/jsf.js;jsessionid=432aa8a223746068ecfbd015a860?ln=javax.faces"></script>
+    <title>Liang Live Exercise by Y. Daniel Liang</title>
+
+    <style>
+      .header {
+          text-align: center;
+          font-family: arial;
+          background-color: goldenrod; color: white; 
+          /*          background-color: #6193cb; color: white; font-size: 96%;*/
+          border-bottom: 2px solid gray; border-right: 2px solid gray;
+          left: 28px;  font-size: 100%; font-weight: bold;
+          font-family: Verdana, Helvetica, sans-serif;
+          width:575px;
+          /*          height: 210px;*/
+          padding: 3px;
+          margin-top:0px;
+          margin-bottom: 0px; 
+          top: 30px;
+          left: 20px;
+      }
+
+      .gradingStatusStyle {
+          font-family: times; font-weight: bold; font-color: gold;
+          margin-left: 48px;  font-size: 96%; 
+          width:575px;
+      }
+
+      .messageStyle {
+          text-align: center;
+          font-family: times;
+          font-size: 96%; 
+          font-family: Verdana, Helvetica, sans-serif;
+          width:575px;
+      }
+    </style>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+    <!--  11/9/2014  &lt;script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js"&gt;&lt;/script&gt;-->
+<!--    &lt;script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"&gt;&lt;/script&gt;-->
+        <script type="text/javascript" src="https://liveexample.pearsoncmg.com/ace2/src/ace.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" />
+    <style type="text/css">
+      #editor {
+          /** Setting height is also important, otherwise editor wont showup**/
+          height: 175px;
+      }
+    </style>
+
+    <style type="text/css">
+      #editor {
+          /** Setting height is also important, otherwise editor wont showup**/
+          height: 175px;
+          /*          font-family: monaco, monospace, courier;*/
+      }
+
+      .kwd { color: #008008 }  /* keyword */
+      .com { color: #800800;  }  /* comment */
+      /*      .com { color: #800800; background: #d1e0f0; }   comment */
+      .lit { color: #066066 }  /* literal value */
+      .str { color: #080080 } /* string */
+      .typ, .pun, .opn, .clo, .tag, .atn, .atv, .dec, .var, .fun { color: #000;} /* rest of the classes*/	
+
+      /*     <p class="kwd">KEYWORD</p>
+          <p style="background: green;">KEYWORD</p>
+          <p class="com">COMMENT</p>
+          <p style="background: darkred;">KEYWORD</p>
+          <p class="lit">LITERAL</p>
+          <p style="background: teal;">KEYWORD</p>
+          <p class="str">STRING</p>
+          <p style="background: darkblue;">KEYWORD</p>
+          <p class="typ">OTHER</p>
+      */
+
+      .ace-chrome .ace_keyword {
+          color: #000fd6 !important; 
+          font-weight: bold;
+      }
+
+    .ace_keyword.ace_operator {
+        color: black !important;
+    }
+            
+      .ace_comment {
+          color: #005500 !important; 
+      }
+
+      .ace_constant {
+          color: #007d9f !important;
+      }
+
+      .ace_string {
+          color: #007d9f !important;
+      }
+
+/*      OLD colors
+      .ace-chrome .ace_keyword {
+          color: green !important; 
+      }
+
+    .ace_keyword.ace_operator {
+        color: black !important;
+    }
+            
+      .ace_comment {
+          color: darkred !important; 
+      }
+
+      .ace_constant {
+          color: teal !important;
+      }
+
+      .ace_string {
+          color: darkblue !important;
+      }*/
+
+      /*.ace_editor, .ace_editor * {
+        font-family: "Meslo LG M" !important;
+        font-size: 13px !important;
+      }
+      .ace_scroller {
+         background-color: #15172e !important;
+      }
+      .ace_text-layer {
+         color: #f7f7f7 !important;
+      }
+      .ace_gutter {
+         background: #CFCFCF !important;
+      }
+      .ace_print_margin {
+         background: #E6E6E6 !important;
+      }
+      .ace_string {
+        color: #8df653 !important;
+      }
+      .ace_constant.ace_numeric {
+        color: #00a1fd !important;
+      }
+      .ace_keyword {
+        color: #ff3d50 !important;
+      }
+      .ace_keyword.ace_operator {
+        color: #ff3d50 !important;
+      }
+      .ace_active_line {
+        background: #3A3C4D !important;
+      }
+      .ace_selection {
+        background: #3A3C4D !important;
+      }
+      .ace_cursor {
+        border-left: 1px solid #f7f7f7 !important;
+      }*/
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            var textarea = $('#jsfForm\\:sourceInputTextarea');
+
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/chrome");
+            editor.getSession().setMode("ace/mode/java");
+            editor.getSession().setTabSize(2);
+
+            editor.getSession().on('change', function () {
+                textarea.val(editor.getSession().getValue());
+            });
+
+            textarea.val(editor.getSession().getValue());
+
+            // Editor for result, just for display
+            var editorForResult = ace.edit("editorForResult");
+            editorForResult.setTheme("ace/theme/chrome");
+            editorForResult.getSession().setMode("ace/mode/c");
+            editorForResult.renderer.setShowGutter(false);
+            editorForResult.setReadOnly(true);
+//            editorForResult.getSession().setUseWrapMode(true);
+        });
+    </script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89940905-27"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  gtag('config', 'UA-89940905-27');
+</script>
+
+<script type="text/javascript" src="https://liveexample.pearsoncmg.com/logging.js"></script></head><body style="width:100%; margin-right: 0 auto;">
+    <!--    &lt;div style="left: 28px; position:absolute;  font-size: 60%; margin-bottom: 0px; color: navy; font-family: Verdana, Helvetica, sans-serif"&gt;
+          Developed for Introduction to Java Programming Tenth Edition by
+          &lt;a href="http://www.cs.armstrong.edu/liang" style="text-decoration: none; color: green"&gt;Y. Daniel Liang&lt;/a&gt;&lt;/div&gt;-->
+<form id="jsfForm" name="jsfForm" method="post" action="/CheckExercise/faces/CheckExercise.xhtml;jsessionid=432aa8a223746068ecfbd015a860" enctype="application/x-www-form-urlencoded" style="margin: 0.5em; margin-bottom: 0.0em;">
+<input type="hidden" name="jsfForm" value="jsfForm" />
+
+      <!--
+      &lt;h:inputHidden value="" id="u"/&gt;
+      &lt;h:inputHidden value="" id="x"/&gt;
+      &lt;h:inputHidden value="" id="y"/&gt;
+      &lt;h:inputHidden value="" id="i"/&gt;
+      -->
+      
+<!--      
+      
+      --><table id="jsfForm:bigPanel" style="width:100%; margin-right: 0 auto;">
+<tbody>
+<tr>
+<td><label id="jsfForm:header1" style="width:100%; margin-right: 0 auto;" class="header">CheckExercise: Exercise01_01.java</label></td>
+</tr>
+<tr>
+<td><table style="margin-top: 1px; padding: 2px; width:575px; background-color: white;                       border: 1px solid #f6912f; font-weight: bold; font-size: 96%;                      width:100%; margin: 0 auto;">
+<tbody>
+<tr>
+<td><table style="margin-top: 1px; padding: 2px; width:575px; background-color: white;                       border: 1px  #f6912f; font-weight: bold; font-size: 96%;                      width:600px; margin: 0 auto;">
+<tbody>
+<tr>
+<td><label>Choose a Chapter: </label></td>
+<td><select id="jsfForm:j_idt12" name="jsfForm:j_idt12" size="1" onchange="mojarra.ab(this,event,'valueChange',0,'jsfForm:exercise')">	<option value="Chapter 1" selected="selected">Chapter 1</option>
+	<option value="Chapter 2">Chapter 2</option>
+	<option value="Chapter 3">Chapter 3</option>
+	<option value="Chapter 4">Chapter 4</option>
+	<option value="Chapter 5">Chapter 5</option>
+	<option value="Chapter 6">Chapter 6</option>
+	<option value="Chapter 7">Chapter 7</option>
+	<option value="Chapter 8">Chapter 8</option>
+	<option value="Chapter 9">Chapter 9</option>
+	<option value="Chapter 10">Chapter 10</option>
+	<option value="Chapter 11">Chapter 11</option>
+	<option value="Chapter 12">Chapter 12</option>
+	<option value="Chapter 13">Chapter 13</option>
+	<option value="Chapter 14">Chapter 14</option>
+	<option value="Chapter 15">Chapter 15</option>
+	<option value="Chapter 16">Chapter 16</option>
+	<option value="Chapter 17">Chapter 17</option>
+	<option value="Chapter 18">Chapter 18</option>
+	<option value="Chapter 19">Chapter 19</option>
+	<option value="Chapter 20">Chapter 20</option>
+	<option value="Chapter 21">Chapter 21</option>
+	<option value="Chapter 22">Chapter 22</option>
+	<option value="Chapter 23">Chapter 23</option>
+	<option value="Chapter 24">Chapter 24</option>
+	<option value="Chapter 25">Chapter 25</option>
+	<option value="Chapter 26">Chapter 26</option>
+	<option value="Chapter 27">Chapter 27</option>
+	<option value="Chapter 28">Chapter 28</option>
+	<option value="Chapter 29">Chapter 29</option>
+</select></td>
+<td><label>Choose an Exercise: </label></td>
+<td><select id="jsfForm:exercise" name="jsfForm:exercise" size="1" onchange="mojarra.ab(this,event,'valueChange','@this',0)">	<option value="Exercise01_01" selected="selected">Exercise01_01</option>
+	<option value="Exercise01_01Extra">Exercise01_01Extra</option>
+	<option value="Exercise01_02">Exercise01_02</option>
+	<option value="Exercise01_02Extra">Exercise01_02Extra</option>
+	<option value="Exercise01_03">Exercise01_03</option>
+	<option value="Exercise01_03Extra">Exercise01_03Extra</option>
+	<option value="Exercise01_04">Exercise01_04</option>
+	<option value="Exercise01_05">Exercise01_05</option>
+	<option value="Exercise01_06">Exercise01_06</option>
+	<option value="Exercise01_07">Exercise01_07</option>
+	<option value="Exercise01_08">Exercise01_08</option>
+	<option value="Exercise01_09">Exercise01_09</option>
+	<option value="Exercise01_10">Exercise01_10</option>
+	<option value="Exercise01_11">Exercise01_11</option>
+	<option value="Exercise01_12">Exercise01_12</option>
+	<option value="Exercise01_13">Exercise01_13</option>
+</select></td>
+<td><input type="submit" name="jsfForm:j_idt16" value="Set Exercise" style="font-style: normal; font-weight: normal; font-size: 100%" class="btn btn-sm btn-primary" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td>
+
+        <div id="editor" style="width:575px; font-weight: normal; margin-top: 1px;height:177px; background-color: white; border: 1px solid #f6912f; font-size: 96%;height:257px;;               width:100%; margin: 0 auto;">/* Paste your Exercise01_01 here and click Automatic Check.
+For all programming projects, the numbers should be double 
+unless it is explicitly stated as integer.
+If you get a java.util.InputMismatchException error, check if 
+your code used input.readInt(), but it should be input.readDouble().
+For integers, use int unless it is explicitly stated as long. */</div>
+
+        <div id="inputLabel"></div></td>
+</tr>
+<tr>
+<td>
+       </td>
+</tr>
+<tr>
+<td><span style="margin-top:0px; width:100%; margin: 0 auto;"><input type="submit" name="jsfForm:j_idt21" value="Compile/Run" style="font-style: normal; font-weight: normal; font-size: 100%" class="btn btn-sm btn-primary" /> 
+          <input type="submit" name="jsfForm:j_idt23" value="Automatic Check" style="font-style: normal; font-weight: normal; font-size: 100%" class="btn btn-sm btn-primary" /><label style="width:200px;" class="gradingStatusStyle"></label>
+          <!--                                        &lt;span&gt; (Note: Clicking &lt;span style = "font-style: italic"&gt;Compile/Run&lt;/span&gt; for selftesting. 
+                                  Clicking &lt;span style ="font-style: italic"&gt;Automatic Grade&lt;/span&gt; will submit your program to a database.)
+                              &lt;/span&gt;--></span></td>
+</tr>
+<tr>
+<td>
+
+        <!--        &lt;h:inputTextarea id="resultInputText" disabled="true"
+                                 style="text-align: left; font-family: courier; width:628px; height:181px; font-weight: bold;
+                                 font-size: 90%; color: black; background-color: white; border: 1px solid; border-color: #f6912f;" 
+                                 value="&lt;div&gt;&lt;span style='font-style:bold;color:#e31c3d'&gt;We recommend that you use this tool to test the code. If your code is wrong, the tool will display your output and the correct output so to help you debug the error.&lt;/span&gt; Compile/Run is provided for your convenience to compile and run the code. 
+The extra exercises are available for instructors. Email y.daniel.liang@gmail.com 
+to request a copy of the extra exercises.&lt;/div&gt;"/&gt;--></td>
+</tr>
+<tr>
+<td><span style="text-align: left; width:575px;  max-width:575px; font-weight: normal;                 font-size: 96%; color: black; background-color: white;                  ; padding-left:5px; ; padding-top: -20px; width:100%; margin: 0 auto;"><span style="width:100%; margin: 0 auto; height: 500px;"><span style='font-style:bold;color:#e31c3d'>We recommend that you use this tool to test the code. If your code is wrong, the tool will display your output and the correct output so to help you debug the error.</span> Compile/Run is provided for your convenience to compile and run the code. 
+The extra exercises are available for instructors. Email y.daniel.liang@gmail.com 
+to request a copy of the extra exercises.</span></span></td>
+</tr>
+<tr>
+<td>
+        <div class="messageStyle" style="width:100%; margin: 0 auto;">Please report errors to <a href="mailto:y.daniel.liang@gmail.com" style="text-decoration: none; color: green">Dr. Liang</a>
+        </div></td>
+</tr>
+<tr>
+<td><textarea id="jsfForm:sourceInputTextarea" name="jsfForm:sourceInputTextarea" style="font-family: courier;                            font-weight: bold; margin-top: 0px;                          height:0px; background-color: white; border: 0px solid #f6912f;                           font-size: 96%; overflow:hidden; resize:none;  margin: 0 auto;">/* Paste your Exercise01_01 here and click Automatic Check.
+For all programming projects, the numbers should be double 
+unless it is explicitly stated as integer.
+If you get a java.util.InputMismatchException error, check if 
+your code used input.readInt(), but it should be input.readDouble().
+For integers, use int unless it is explicitly stated as long. */</textarea></td>
+</tr>
+</tbody>
+</table>
+<!--<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-6344441125061978628:-396386722659074231" autocomplete="off" />-->
+</form></body>
+</html><!--Java Check Exercise-->

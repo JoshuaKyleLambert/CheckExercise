@@ -3,306 +3,221 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head><title></title></head><body></body>
+    <!--Usage: http://localhost:8080/LiveRun/faces/TestExercise.xhtml?programName=Exercise02_02&chapter=Chapter%202&chapterSelectable=false-->
 
-  <!--Usage: http://localhost:8080/LiveRun/faces/TestExercise.xhtml?programName=Exercise02_02&chapter=Chapter%202&chapterSelectable=false-->
+    <h:head>
+        <title>Liang Live Exercise by Y. Daniel Liang</title>
 
-  <h:head>
-    <title>Liang Live Exercise by Y. Daniel Liang</title>
+        <style>
+            .header {
+                text-align: center;
+                font-family: arial;
+                background-color: goldenrod; color: white; 
+                /*          background-color: #6193cb; color: white; font-size: 96%;*/
+                border-bottom: 2px solid gray; border-right: 2px solid gray;
+                left: 28px;  font-size: 100%; font-weight: bold;
+                font-family: Verdana, Helvetica, sans-serif;
+                width:575px;
+                /*          height: 210px;*/
+                padding: 3px;
+                margin-top:0px;
+                margin-bottom: 0px; 
+                top: 30px;
+                left: 20px;
+            }
 
-    <style>
-      .header {
-          text-align: center;
-          font-family: arial;
-          background-color: goldenrod; color: white; 
-          /*          background-color: #6193cb; color: white; font-size: 96%;*/
-          border-bottom: 2px solid gray; border-right: 2px solid gray;
-          left: 28px;  font-size: 100%; font-weight: bold;
-          font-family: Verdana, Helvetica, sans-serif;
-          width:575px;
-          /*          height: 210px;*/
-          padding: 3px;
-          margin-top:0px;
-          margin-bottom: 0px; 
-          top: 30px;
-          left: 20px;
-      }
+            .gradingStatusStyle {
+                font-family: times; font-weight: bold; color: gold;
+                margin-left: 48px;  font-size: 96%; 
+                width:575px;
+            }
 
-      .gradingStatusStyle {
-          font-family: times; font-weight: bold; font-color: gold;
-          margin-left: 48px;  font-size: 96%; 
-          width:575px;
-      }
+            .messageStyle {
+                text-align: center;
+                font-family: times;
+                font-size: 96%; 
+                font-family: Verdana, Helvetica, sans-serif;
+                width:575px;
+            }
+        </style>
 
-      .messageStyle {
-          text-align: center;
-          font-family: times;
-          font-size: 96%; 
-          font-family: Verdana, Helvetica, sans-serif;
-          width:575px;
-      }
-    </style>
-
-    <script type='text/javascript' src='//code.jquery.com/jquery-2.0.2.js'></script>
-    <!--  11/9/2014  <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js"></script>-->
-<!--    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>-->
+        <script type='text/javascript' src='//code.jquery.com/jquery-2.0.2.js'></script>
+    
         <script type='text/javascript' src="https://liveexample.pearsoncmg.com/ace2/src/ace.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" />
-    <style type='text/css'>
-      #editor {
-          /** Setting height is also important, otherwise editor wont showup**/
-          height: 175px;
-      }
-    </style>
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" />
+        <style type='text/css'>
+            #editor {
+                /** Setting height is also important, otherwise editor wont showup**/
+                height: 175px;
+            }
+        </style>
 
-    <style type='text/css'>
-      #editor {
-          /** Setting height is also important, otherwise editor wont showup**/
-          height: 175px;
-          /*          font-family: monaco, monospace, courier;*/
-      }
+        <style type='text/css'>
+            #editor {
+                /** Setting height is also important, otherwise editor wont showup**/
+                height: 175px;
+                /*          font-family: monaco, monospace, courier;*/
+            }
 
-      .kwd { color: #008008 }  /* keyword */
-      .com { color: #800800;  }  /* comment */
-      /*      .com { color: #800800; background: #d1e0f0; }   comment */
-      .lit { color: #066066 }  /* literal value */
-      .str { color: #080080 } /* string */
-      .typ, .pun, .opn, .clo, .tag, .atn, .atv, .dec, .var, .fun { color: #000;} /* rest of the classes*/	
+            .kwd { color: #008008 }  /* keyword */
+            .com { color: #800800;  }  /* comment */
+            /*      .com { color: #800800; background: #d1e0f0; }   comment */
+            .lit { color: #066066 }  /* literal value */
+            .str { color: #080080 } /* string */
+            .typ, .pun, .opn, .clo, .tag, .atn, .atv, .dec, .var, .fun { color: #000;} /* rest of the classes*/	
 
-      /*     <p class="kwd">KEYWORD</p>
-          <p style ="background: green;">KEYWORD</p>
-          <p class="com">COMMENT</p>
-          <p style ="background: darkred;">KEYWORD</p>
-          <p class="lit">LITERAL</p>
-          <p style ="background: teal;">KEYWORD</p>
-          <p class="str">STRING</p>
-          <p style ="background: darkblue;">KEYWORD</p>
-          <p class="typ">OTHER</p>
-      */
+ 
+            .ace-chrome .ace_keyword {
+                color: #000fd6 !important; 
+                font-weight: bold;
+            }
 
-      .ace-chrome .ace_keyword {
-          color: #000fd6 !important; 
-          font-weight: bold;
-      }
+            .ace_keyword.ace_operator {
+                color: black !important;
+            }
 
-    .ace_keyword.ace_operator {
-        color: black !important;
-    }
-            
-      .ace_comment {
-          color: #005500 !important; 
-      }
+            .ace_comment {
+                color: #005500 !important; 
+            }
 
-      .ace_constant {
-          color: #007d9f !important;
-      }
+            .ace_constant {
+                color: #007d9f !important;
+            }
 
-      .ace_string {
-          color: #007d9f !important;
-      }
+            .ace_string {
+                color: #007d9f !important;
+            }
 
-/*      OLD colors
-      .ace-chrome .ace_keyword {
-          color: green !important; 
-      }
+        </style>
 
-    .ace_keyword.ace_operator {
-        color: black !important;
-    }
-            
-      .ace_comment {
-          color: darkred !important; 
-      }
+        <script type='text/javascript'>
+            $(function () {
+                var textarea = $('#jsfForm\\:sourceInputTextarea');
 
-      .ace_constant {
-          color: teal !important;
-      }
+                var editor = ace.edit("editor");
+                editor.setTheme("ace/theme/chrome");
+                editor.getSession().setMode("ace/mode/java");
+                editor.getSession().setTabSize(2);
 
-      .ace_string {
-          color: darkblue !important;
-      }*/
+                editor.getSession().on('change', function () {
+                    textarea.val(editor.getSession().getValue());
+                });
 
-      /*.ace_editor, .ace_editor * {
-        font-family: "Meslo LG M" !important;
-        font-size: 13px !important;
-      }
-      .ace_scroller {
-         background-color: #15172e !important;
-      }
-      .ace_text-layer {
-         color: #f7f7f7 !important;
-      }
-      .ace_gutter {
-         background: #CFCFCF !important;
-      }
-      .ace_print_margin {
-         background: #E6E6E6 !important;
-      }
-      .ace_string {
-        color: #8df653 !important;
-      }
-      .ace_constant.ace_numeric {
-        color: #00a1fd !important;
-      }
-      .ace_keyword {
-        color: #ff3d50 !important;
-      }
-      .ace_keyword.ace_operator {
-        color: #ff3d50 !important;
-      }
-      .ace_active_line {
-        background: #3A3C4D !important;
-      }
-      .ace_selection {
-        background: #3A3C4D !important;
-      }
-      .ace_cursor {
-        border-left: 1px solid #f7f7f7 !important;
-      }*/
-    </style>
-
-    <script type='text/javascript'>
-        $(function () {
-            var textarea = $('#jsfForm\\:sourceInputTextarea');
-
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/chrome");
-            editor.getSession().setMode("ace/mode/java");
-            editor.getSession().setTabSize(2);
-
-            editor.getSession().on('change', function () {
                 textarea.val(editor.getSession().getValue());
+
+                // Editor for result, just for display
+                var editorForResult = ace.edit("editorForResult");
+                editorForResult.setTheme("ace/theme/chrome");
+                editorForResult.getSession().setMode("ace/mode/c");
+                editorForResult.renderer.setShowGutter(false);
+                editorForResult.setReadOnly(true);
+                //            editorForResult.getSession().setUseWrapMode(true);
             });
+        </script>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script type="text/javascript" async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89940905-27"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments)
+            };
+            gtag('js', new Date());
+            gtag('config', 'UA-89940905-27');
+        </script>
 
-            textarea.val(editor.getSession().getValue());
+        <script type="text/javascript" src="https://liveexample.pearsoncmg.com/logging.js"></script>
 
-            // Editor for result, just for display
-            var editorForResult = ace.edit("editorForResult");
-            editorForResult.setTheme("ace/theme/chrome");
-            editorForResult.getSession().setMode("ace/mode/c");
-            editorForResult.renderer.setShowGutter(false);
-            editorForResult.setReadOnly(true);
-//            editorForResult.getSession().setUseWrapMode(true);
-        });
-    </script>
-<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-89940905-27"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)};
-  gtag('js', new Date());
-  gtag('config', 'UA-89940905-27');
-</script>
-
-<script type="text/javascript" src="https://liveexample.pearsoncmg.com/logging.js"></script>
-
-  </h:head>
-  <h:body style='width:100%; margin-right: 0 auto;'>
-    <!--    <div style="left: 28px; position:absolute;  font-size: 60%; margin-bottom: 0px; color: navy; font-family: Verdana, Helvetica, sans-serif">
-          Developed for Introduction to Java Programming Tenth Edition by
-          <a href="http://www.cs.armstrong.edu/liang" style="text-decoration: none; color: green">Y. Daniel Liang</a></div>-->
+    </h:head>
+    <h:body style='width:100%; margin-right: 0 auto;'>
 
 
-    <h:form id = "jsfForm" style="margin: 0.5em; margin-bottom: 0.0em;">
-      <!--
-      <h:inputHidden value="#{TliveExerciseNew.chapter}" id="u"/>
-      <h:inputHidden value="#{TliveExerciseNew.programName}" id="x"/>
-      <h:inputHidden value="#{TliveExerciseNew.username}" id="y"/>
-      <h:inputHidden value="#{TliveExerciseNew.input}" id="i"/>
-      -->
-      
-<!--      
-      #{TgetParameterForTestExercise.dummy()}
-      -->
-
-      <h:panelGrid id = "bigPanel" style='width:100%; margin-right: 0 auto;'>
-        <h:outputLabel id = "header1" class = "header" style='width:100%; margin-right: 0 auto;'
-                       value="#{liveExerciseNew.header}" />
-        <h:panelGrid columns="1" rendered="#{liveExerciseNew.isChapterSelectable()}" 
-                     style="margin-top: 1px; padding: 2px; width:575px; background-color: white; 
-                     border: 1px solid #f6912f; font-weight: bold; font-size: 96%;
-                     width:100%; margin: 0 auto;">
-        <h:panelGrid  columns="5" style="margin-top: 1px; padding: 2px; width:575px; background-color: white; 
-                     border: 1px  #f6912f; font-weight: bold; font-size: 96%;
-                     width:600px; margin: 0 auto;">
-          <h:outputLabel value="Choose a Chapter: " />
-          <h:selectOneMenu value="#{liveExerciseNew.chapter}" >
-            <f:selectItems value="#{liveExerciseNew.chapters}" />
-            <f:ajax  listener="#{liveExerciseNew.changeChapter}" render="exercise" />
-          </h:selectOneMenu> 
-          <h:outputLabel value="Choose an Exercise: " />
-          <h:selectOneMenu id="exercise" 
-                            value="#{liveExerciseNew.programName}">
-            <f:selectItems value="#{liveExerciseNew.exercises}" />
-            <f:ajax  listener="#{liveExerciseNew.chooseExercise}" execute="@this"/>
-          </h:selectOneMenu> 
+        <h:form id = "jsfForm" style="margin: 0.5em; margin-bottom: 0.0em;">
 
 
-          <h:commandButton value="Set Exercise" class="btn btn-sm btn-primary" 
-                           style ="font-style: normal; font-weight: normal; font-size: 100%"
-                           action ="#{liveExerciseNew.chooseExercise}"/>
-        </h:panelGrid>
-        </h:panelGrid>
+            <h:panelGrid id = "bigPanel" style='width:100%; margin-right: 0 auto;'>
+                <h:outputLabel id = "header1" class = "header" style='width:100%; margin-right: 0 auto;'
+                               value="#{checkExerciseBean.header}" />
+                <h:panelGrid columns="1" rendered="#{checkExerciseBean.isChapterSelectable()}" 
+                             style="margin-top: 1px; padding: 2px; width:575px; background-color: white; 
+                             border: 1px solid #f6912f; font-weight: bold; font-size: 96%;
+                             width:100%; margin: 0 auto;">
+                    <h:panelGrid  columns="5" style="margin-top: 1px; padding: 2px; width:575px; background-color: white; 
+                                  border: 1px  #f6912f; font-weight: bold; font-size: 96%;
+                                  width:600px; margin: 0 auto;">
+                        <h:outputLabel value="Choose a Chapter: " />
+                        <h:selectOneMenu value="#{checkExerciseBean.chapter}" >
+                            <f:selectItems value="#{checkExerciseBean.chapters}" />
+                            <f:ajax  listener="#{checkExerciseBean.changeChapter}" render="exercise" />
+                        </h:selectOneMenu> 
+                        <h:outputLabel value="Choose an Exercise: " />
+                        <h:selectOneMenu id="exercise" 
+                                         value="#{checkExerciseBean.programName}">
+                            <f:selectItems value="#{checkExerciseBean.exercises}" />
+                            <f:ajax  listener="#{checkExerciseBean.chooseExercise}" execute="@this"/>
+                        </h:selectOneMenu> 
 
-        <div id="editor" style="#{liveExerciseNew.programStyle}; 
-             width:100%; margin: 0 auto;">#{liveExerciseNew.program}</div>
 
-        <div id = "inputLabel">
-          <h:outputLabel value="#{liveExerciseNew.inputPrompt}" 
-                         style = "font-weight: bold; font-family: times; width:100%; margin: 0 auto;"
-                         rendered="#{liveExerciseNew.isSampleDataProvided()}"/>
-        </div>
+                        <h:commandButton value="Set Exercise" class="btn btn-sm btn-primary" 
+                                         style ="font-style: normal; font-weight: normal; font-size: 100%"
+                                         action ="#{checkExerciseBean.chooseExercise}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
 
-        <h:inputTextarea id="dataInputTextarea" rendered="#{liveExerciseNew.isSampleDataProvided()}"
-                         value="#{liveExerciseNew.input}" style="font-family: Consolas, Menlo, Monaco,
-                         Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, 
-                         Courier New, monospace, serif, monospace !important; width:575px; 
-                         height:40px; background-color: white; border: 1px solid #f6912f; 
-                         font-weight: normal; font-size: 96%; margin-top: 0px;
-                         width:100%; margin: 0 auto;"></h:inputTextarea>
+                <div id="editor" style="#{checkExerciseBean.programStyle}; 
+                     width:100%; margin: 0 auto;">#{checkExerciseBean.program}</div>
 
-        <h:panelGroup style="margin-top:0px; width:100%; margin: 0 auto;">
-          <h:commandButton value="Compile/Run" class="btn btn-sm btn-primary" style ="font-style: normal; font-weight: normal; font-size: 100%"
-                           action ="#{liveExerciseNew.run}"/>&nbsp;
-          <h:commandButton value="Automatic Check" class="btn btn-sm btn-primary" style ="font-style: normal; font-weight: normal; font-size: 100%"
-                           rendered="#{liveExerciseNew.isGradable()}" action ="#{liveExerciseNew.grade}"/>
-          <h:outputLabel class ="gradingStatusStyle" style="width:300px;" value="#{liveExerciseNew.getStatus()}"/>
-          <!--                                        <span> (Note: Clicking <span style = "font-style: italic">Compile/Run</span> for selftesting. 
-                                  Clicking <span style ="font-style: italic">Automatic Grade</span> will submit your program to a database.)
-                              </span>-->
-        </h:panelGroup>
+                <div id = "inputLabel">
+                    <h:outputLabel value="#{checkExerciseBean.inputPrompt}" 
+                                   style = "font-weight: bold; font-family: times; width:100%; margin: 0 auto;"
+                                   rendered="#{checkExerciseBean.isSampleDataProvided()}"/>
+                </div>
 
-        <!--        <h:inputTextarea id="resultInputText" disabled="true"
-                                 style="text-align: left; font-family: courier; width:628px; height:181px; font-weight: bold;
-                                 font-size: 90%; color: black; background-color: white; border: 1px solid; border-color: #f6912f;" 
-                                 value="#{liveExerciseNew.result}"/>-->
-        <h:panelGroup rendered ="#{!liveExerciseNew.isAutoCheck()}">
-        <div id="editorForResult" style="#{liveExerciseNew.resultStyle}; width:100%; margin: 0 auto;">#{liveExerciseNew.result}</div>
-        </h:panelGroup>
-        <h:panelGroup rendered ="#{liveExerciseNew.isAutoCheck()}" 
-                      style="text-align: left; width:575px;  max-width:575px; font-weight: normal;
-                font-size: 96%; color: black; background-color: white; 
-                ; padding-left:5px; ; padding-top: -20px; width:100%; margin: 0 auto;">
-            
-      
-            <h:outputText  escape="fasle" style="width:100%; margin: 0 auto; height: 500px;"
-                           value = "#{liveExerciseNew.gradeResult}" />
-        </h:panelGroup>
-        <div class = "messageStyle" style="width:100%; margin: 0 auto;">Please report errors to <a href="mailto:y.daniel.liang@gmail.com" 
-                                                               style="text-decoration: none; color: green">Dr. Liang</a>
-        </div>
-        <h:inputTextarea id="sourceInputTextarea" rendered ="true" required="true"
-                         value="#{liveExerciseNew.program}" style="font-family: courier; 
-                          font-weight: bold; margin-top: 0px;
-                         height:0px; background-color: white; border: 0px solid #f6912f; 
-                         font-size: 96%; overflow:hidden; resize:none;  margin: 0 auto;"></h:inputTextarea>
+                <h:inputTextarea id="dataInputTextarea" rendered="#{checkExerciseBean.isSampleDataProvided()}"
+                                 value="#{checkExerciseBean.input}" style="font-family: Consolas, Menlo, Monaco,
+                                 Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, 
+                                 Courier New, monospace, serif, monospace !important; width:575px; 
+                                 height:40px; background-color: white; border: 1px solid #f6912f; 
+                                 font-weight: normal; font-size: 96%; margin-top: 0px;
+                                 width:100%; margin: 0 auto;"></h:inputTextarea>
 
-      </h:panelGrid>
-      <f:metadata>
-        <f:viewParam name="programName" value="#{liveExerciseNew.programName}" />
-        <f:viewAction action="#{liveExerciseNew.checkURL}" />
-      </f:metadata>
-    </h:form>      
+                <h:panelGroup style="margin-top:0px; width:100%; margin: 0 auto;">
+                    <h:commandButton value="Compile/Run" class="btn btn-sm btn-primary" style ="font-style: normal; font-weight: normal; font-size: 100%"
+                                     action ="#{checkExerciseBean.run}"/>&nbsp;
+                    <h:commandButton value="Automatic Check" class="btn btn-sm btn-primary" style ="font-style: normal; font-weight: normal; font-size: 100%"
+                                     rendered="#{checkExerciseBean.isGradable()}" action ="#{checkExerciseBean.grade}"/>
+                    <h:outputLabel class ="gradingStatusStyle" style="width:300px;" value="#{checkExerciseBean.getStatus()}"/>
 
-  </h:body>
+                </h:panelGroup>
+
+
+                <h:panelGroup rendered ="#{!checkExerciseBean.isAutoCheck()}">
+                    <div id="editorForResult" style="#{checkExerciseBean.resultStyle}; width:100%; margin: 0 auto;">#{checkExerciseBean.result}</div>
+                </h:panelGroup>
+                <h:panelGroup rendered ="#{checkExerciseBean.isAutoCheck()}" 
+                              style="text-align: left; width:575px;  max-width:575px; font-weight: normal;
+                              font-size: 96%; color: black; background-color: white; 
+                              ; padding-left:5px; ; padding-top: -20px; width:100%; margin: 0 auto;">
+
+
+                    <h:outputText  escape="fasle" style="width:100%; margin: 0 auto; height: 500px;"
+                                   value = "#{checkExerciseBean.gradeResult}" />
+                </h:panelGroup>
+                <div class = "messageStyle" style="width:100%; margin: 0 auto;">Please report errors to <a href="mailto:y.daniel.liang@gmail.com" 
+                                                                                                           style="text-decoration: none; color: green">Dr. Liang</a>
+                </div>
+                <h:inputTextarea id="sourceInputTextarea" rendered ="true" required="true"
+                                 value="#{checkExerciseBean.program}" style="font-family: courier; 
+                                 font-weight: bold; margin-top: 0px;
+                                 height:0px; background-color: white; border: 0px solid #f6912f; 
+                                 font-size: 96%; overflow:hidden; resize:none;  margin: 0 auto;"></h:inputTextarea>
+
+            </h:panelGrid>
+            <f:metadata>
+                <f:viewParam name="programName" value="#{checkExerciseBean.programName}" />
+                <f:viewAction action="#{checkExerciseBean.checkURL}" />
+            </f:metadata>
+        </h:form>      
+
+    </h:body>
 </html>
-<!--Java Check Exercise-->

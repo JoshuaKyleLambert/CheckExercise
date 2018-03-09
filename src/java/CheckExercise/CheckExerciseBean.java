@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Joshu
+ * @author Joshua Lambert, Ayman Bagabas, Benson Tran
  */
 @Named(value = "checkExerciseBean")
 @SessionScoped

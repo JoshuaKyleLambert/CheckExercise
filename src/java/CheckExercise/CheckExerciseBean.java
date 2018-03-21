@@ -5,9 +5,13 @@
  */
 package CheckExercise;
 
+import helpers.*;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -19,10 +23,10 @@ public class CheckExerciseBean implements Serializable {
 
     private String header = "Welcome to test Header";
     private Boolean chapterSelectable = true;
-    private String chapter = "choose a Chapter";
-    private String[] chapters = {"chapter 1", "Chapter 2"};
-    private String programName = "Program Name";
-    private String[] exercises = {"Exercise", "Exercise 2"};
+    private String chapter;
+    private Chapter[] chapters;
+    private String programName;
+    private Exercise[] exercises;
     private String programStyle;
     private String program = "/* Paste your Exercise01_01 here and click Automatic Check.\n"
             + "For all programming projects, the numbers should be double \n"
@@ -45,6 +49,14 @@ public class CheckExerciseBean implements Serializable {
             + " exercises.";
     private String status = "Status Message goes here";
     private String result = "Results in here";
+    
+    @PostConstruct
+    public void init() {
+        this.chapters = Utils.populateChapters(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"));
+        this.chapter = (chapters[0] != null) ? chapters[0].toString(): "";
+        this.exercises = chapters[0].getExercises();
+        this.programName = (chapters[0] != null && chapters[0].getExercises()[0] != null) ? chapters[0].getExercises()[0].toString(): "";
+    }
 
     /**
      * Creates a new instance of CheckExerciseBean
@@ -57,7 +69,8 @@ public class CheckExerciseBean implements Serializable {
      *
      */
     public void changeChapter() {
-
+        int chapterNo = Integer.parseInt(chapter.substring(chapter.lastIndexOf(" ")+1));
+        setExercises(chapters[chapterNo-1].getExercises());
     }
 
     public void chooseExercise() {
@@ -97,11 +110,11 @@ public class CheckExerciseBean implements Serializable {
         this.status = status;
     }
 
-    public String[] getChapters() {
+    public Chapter[] getChapters() {
         return chapters;
     }
 
-    public void setChapters(String[] chapters) {
+    public void setChapters(Chapter[] chapters) {
         this.chapters = chapters;
     }
 
@@ -113,11 +126,11 @@ public class CheckExerciseBean implements Serializable {
         this.programName = programName;
     }
 
-    public String[] getExercises() {
+    public Exercise[] getExercises() {
         return exercises;
     }
 
-    public void setExercises(String[] exercises) {
+    public void setExercises(Exercise[] exercises) {
         this.exercises = exercises;
     }
 

@@ -1,0 +1,28 @@
+Programming Exercise 13.5. Use the following template for the program:
+
+<pre>
+public class Exercise13_05 {
+  // Main method
+  public static void main(String[] args) {
+    // Create two comarable circles
+    Circle1 circle1 = new Circle1(5);
+    Circle1 circle2 = new Circle1(4);
+
+    // Display the max circle
+    Circle1 circle = (Circle1)GeometricObject1.max(circle1, circle2);
+    System.out.println("The max circle's radius is " +
+      circle.getRadius());
+    System.out.println(circle);
+  }
+}
+
+abstract class GeometricObject1 implements Comparable {
+  // Implement it
+}
+
+// Circle.java: The circle class that extends GeometricObject
+class Circle1 extends GeometricObject1 { 
+  // Implement it
+}
+
+</pre>

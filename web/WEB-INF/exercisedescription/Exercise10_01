@@ -1,0 +1,16 @@
+Programming Exercise 10.1.
+Use the following template for the program:
+
+<pre>
+public class Exercise10_01 {
+  public static void main(String[] args) {
+    time = new Time(555550000);
+    System.out.println("Hour: " + time.getHour() + " Minute: " +
+                       time.getMinute() + " Second: " + time.getSecond());
+  }
+}
+
+class Time {
+  // Implement it
+}
+</pre>

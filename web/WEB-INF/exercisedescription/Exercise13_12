@@ -1,0 +1,20 @@
+Programming Exercise 13.12. Use the following template for the program:
+
+<pre>
+public class Exercise13_12 {
+  public static void main(String[] args) {
+    new Exercise13_12();
+  }
+
+  public Exercise13_12() {
+    GeometricObject[] a = {new Circle(5), new Circle(6),
+      new Rectangle(2, 3), new Rectangle(2, 3)};
+
+    System.out.println("The total area is " + sumArea(a));
+  }
+
+  public static double sumArea(GeometricObject[] a) {
+    // Implement it
+  }
+}
+</pre>

@@ -1,0 +1,18 @@
+Programming Exercise 13.7. Use the following template for the program:
+
+<pre>
+public class Exercise13_07 {
+  public static void main(String[] args) {
+    Square square = new Square(2);
+    square.howToColor(); // Displays a string "color four sides"
+  }
+}
+
+interface Colorable {
+  public void howToColor();
+}
+
+class Square extends GeometricObject implements Colorable {
+  // Implement it
+}
+</pre>

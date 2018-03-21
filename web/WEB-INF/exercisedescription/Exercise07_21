@@ -1,0 +1,14 @@
+Exercise07_21: Please note that the new description for REVEL Chapter 7 Project 6  is as follows:
+Programming Exercise 7.21
+Write a program that passes an unspecified number of integers from command line and displays their total. 
+Here is a sample run:
+#1
+command>java 1 2 3 4 5 
+The total is 15
+
+#2
+command>java 1 9 1 1 1 
+The total is 13
+
+Class Name: Exercise07_21
+If you get a logical or runtime error, please refer to https://liveexample.pearsoncmg.com/faq.html.

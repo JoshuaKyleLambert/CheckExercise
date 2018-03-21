@@ -1,0 +1,1 @@
+Programming Exercise 7.17. Use input.next() to read a name and input.nextDouble() to read a score. Note don't mix nextLine() with input.nextDouble().

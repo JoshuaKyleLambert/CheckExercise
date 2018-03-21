@@ -1,0 +1,19 @@
+Programming Exercise 13.11. Use the following template for the program:
+
+<pre>
+public class Exercise13_11 {
+  public static void main(String[] args) {
+    Octagon a1 = new Octagon(5);
+    System.out.println("Area is " + a1.getArea());
+    System.out.println("Perimeter is " + a1.getPerimeter());
+
+    Object a2 = a1.clone();
+    System.out.println("Compare the octagons " + a1.compareTo(a2));
+  }
+}
+
+class Octagon extends GeometricObject
+  implements Comparable, Cloneable {
+  // Implement it
+}
+</pre>

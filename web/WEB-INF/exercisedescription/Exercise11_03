@@ -1,0 +1,14 @@
+Programming Exercise 11.3. Use the following test program:
+<pre>
+public class Exercise11_03 {
+  public static void main(String[] args) {
+    CheckingAccount checking = new CheckingAccount(1, 35);
+    SavingsAccount savings = new SavingsAccount(2, 25);
+    checking.withdraw(10);
+    savings.withdraw(10);
+    
+    System.out.println(checking.getBalance());
+    System.out.println(savings.getBalance());
+  }
+}
+</pre>

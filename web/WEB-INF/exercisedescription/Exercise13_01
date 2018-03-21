@@ -1,0 +1,25 @@
+Programming Exercise 11.1. Use the following template for the program:
+
+<pre>
+public class Exercise11_01 {
+  public static void main(String[] args) {
+    Triangle triangle = new Triangle(1, 1.5, 1);
+    triangle.setColor("yellow");
+    triangle.setFilled(true);
+
+    System.out.println(triangle);
+    System.out.println("The area is " + triangle.getArea());
+    System.out.println("The perimeter is "
+      + triangle.getPerimeter());
+    System.out.println(triangle);
+  }
+}
+
+class GeometricObject {
+  // Copy it from the book
+}
+
+class Triangle extends GeometricObject {
+  // Implement it
+}
+</pre>

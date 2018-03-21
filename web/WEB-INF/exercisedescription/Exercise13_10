@@ -1,0 +1,17 @@
+Programming Exercise 13.10. Use the following template for the program:
+
+<pre>
+public class Exercise13_10 {
+  public static void main(String[] args) {
+    Rectangle13_10 obj1 = new Rectangle13_10();
+    Rectangle13_10 obj2 = new Rectangle13_10();
+    System.out.println(obj1.equals(obj2));
+    System.out.println(obj1.compareTo(obj2));
+  }
+}
+
+// Rectangle.java: The Rectangle class that extends GeometricObject
+class Rectangle13_10 extends GeometricObject implements Comparable {
+  // Implement it
+}
+</pre>

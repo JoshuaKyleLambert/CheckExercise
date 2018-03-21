@@ -1,0 +1,18 @@
+Programming Exercise 10.13. Use the following template for the program:
+
+<pre>
+public class Exercise10_13 {
+  public static void main(String[] args) {
+    Rectangle2D r1 = new Rectangle2D(2, 2, 5.5, 4.9);
+    System.out.println("Area is " + r1.getArea());
+    System.out.println("Perimeter is " + r1.getPerimeter());
+    System.out.println(r1.contains(3, 3));
+    System.out.println(r1.contains(new Rectangle2D(4, 5, 10.5, 3.2)));
+    System.out.println(r1.overlaps(new Rectangle2D(3, 5, 2.3, 6.7)));
+  }
+}
+
+class Rectangle2D {
+  // Implement it
+}
+</pre>

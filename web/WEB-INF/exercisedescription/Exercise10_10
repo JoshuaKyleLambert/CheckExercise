@@ -1,0 +1,36 @@
+Programming Exercise 10.10. Use the following template for the program:
+
+<pre>
+import java.util.Scanner;
+
+public class Exercise10_10 {
+  public static void main(String[] args) {
+    int date = 0; // Date to be determined
+    int answer;
+
+    // Create a Scanner
+    Scanner input = new Scanner(System.in);
+
+    for (int i = 0; i < 5; i++) {
+      System.out.println("Is your birth date in Set" + (i + 1) + "?");
+      for (int j = 0; j < 4; j++) {
+        for (int k = 0; k < 4; k++)
+          System.out.print(DateSet.getValue(i, j, k) + "  ");
+        System.out.println();
+      }
+
+      System.out.print("\nEnter 0 for No and 1 for Yes: ");
+      answer = input.nextInt();
+
+      if (answer == 1)
+        date += DateSet.getValue(i, 0, 0);
+    }
+
+    System.out.println("Your birth date is " + date);
+  }
+}
+
+class DateSet {
+  // Implement it
+}
+</pre>

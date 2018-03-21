@@ -1,0 +1,25 @@
+Programming Exercise 9.2. Use the following template for the program:
+
+<pre>
+public class Exercise09_02 {
+  public static void main(String[] args) {
+    Stock stock = new Stock("SUNW", "Sun MicroSystems Inc.");
+    stock.setPreviousClosingPrice(100);
+
+    // Set current price
+    stock.setCurrentPrice(90);
+
+    // Display stock info
+    System.out.println("Previous Closing Price: " +
+      stock.getPreviousClosingPrice());
+    System.out.println("Current Price: " +
+      stock.getCurrentPrice());
+    System.out.println("Price Change: " +
+      stock.getChangePercent() * 100 + "%");
+  }
+}
+
+class Stock {
+  // Implement it
+}
+</pre>

@@ -1,0 +1,12 @@
+Programming Exercise 7.4. Here is a sample run of this program:
+
+<pre>
+Enter a new score: 1
+Enter a new score: 2
+Enter a new score: 3
+Enter a new score: 4
+Enter a new score: -1
+Average is 2.25
+Number of scores above or equal to the average 2
+Number of scores below the average 2
+</pre>

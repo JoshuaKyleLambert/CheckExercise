@@ -1,0 +1,34 @@
+Programming Exercise 13.6. Use the following template for the program:
+
+<pre>
+public class Exercise13_06 {
+  // Main method
+  public static void main(String[] args) {
+    // Create two comarable rects
+    ComparableCircle circle1 = new ComparableCircle(5);
+    ComparableCircle circle2 = new ComparableCircle(15);
+
+    // Display the max rect
+    ComparableCircle circle3 = (ComparableCircle)Max.max(circle1, circle2);
+    System.out.println("The max circle's radius is " + circle3.getRadius());
+    System.out.println(circle3);
+  }
+}
+
+class ComparableCircle extends Circle implements Comparable {
+  // Implement it
+}
+
+//Max.java: Find a maximum object
+class Max {
+  /** Return the maximum of two objects */
+  public static Comparable max
+      (Comparable o1, Comparable o2) {
+    if (o1.compareTo(o2) > 0)
+      return o1;
+    else
+      return o2;
+  }
+}
+
+</pre>

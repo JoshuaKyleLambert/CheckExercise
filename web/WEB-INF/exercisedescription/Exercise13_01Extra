@@ -1,0 +1,32 @@
+This is an extra exercise, which is not printed in the book. 
+Instructors may obtain the description of this exercise from the Instructor 
+Resource Website. Use the following test program:
+
+<pre>
+import java.util.Scanner;
+
+public class Exercise13_01Extra {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in); 
+    System.out.print("Enter time1 (hour minute second): ");
+    int hour, minute, second;
+    hour = input.nextInt();
+    minute = input.nextInt();
+    second = input.nextInt();
+    Time time1 = new Time(hour, minute, second);
+    System.out.println(time1);
+    System.out.println("Elapsed seconds in time1: " + time1.getSeconds());
+    
+    System.out.print("\nEnter time2 (elapsed time): ");
+    long seconds = input.nextLong();
+    Time time2 = new Time(seconds);
+    System.out.println(time2);
+    System.out.println("Elapsed seconds in time2: " + time2.getSeconds());
+    
+    System.out.println("\ntime1.compareTo(time2)? " + time1.compareTo(time2));
+
+    Time time3 = (Time)time1.clone();
+    System.out.println("\ntime1.compareTo(time3)? " + time1.compareTo(time3));
+  }
+}
+</pre>

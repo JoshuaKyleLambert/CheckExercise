@@ -1,0 +1,16 @@
+Programming Exercise 7.2.
+Here is a sample run of this program:
+
+<pre>
+Read a number: 1
+Read a number: 2
+Read a number: 3
+Read a number: 4
+Read a number: 5
+Read a number: 6
+Read a number: 7
+Read a number: 8
+Read a number: 9
+Read a number: 10
+10 9 8 7 6 5 4 3 2 1
+</pre>

@@ -1,0 +1,32 @@
+Programming Exercise 25.1. Use the following test program.
+<pre>
+public class Exercise25_01 {
+  public static void main(String[] args) {
+    new Exercise25_01();
+  }
+
+  public Exercise25_01() {
+    BinaryTree<String> tree = new BinaryTree<String>(); 
+    System.out.print("The height of tree is " + tree.height());
+    
+    tree.insert("Red");
+    System.out.print("\nThe height of tree is " + tree.height());
+
+    tree.insert("Green");
+    System.out.print("\nThe height of tree is " + tree.height());
+
+    BinaryTree<String> tree1 = new BinaryTree<String>(new String[]
+      {"Tom", "George", "Jean", "Jane", "Kevin", "Peter", "Susan", 
+        "Jen", "Kim", "Michael", "Michelle"});
+    System.out.print("\nThe breadth-first traversal is ");
+    tree1.breadthFirstTraversal();
+    System.out.print("\nThe height of tree1 is " + tree1.height());
+    
+    BinaryTree<Integer> tree2 = 
+      new BinaryTree<Integer>(new Integer[]{50, 45, 35, 48, 59, 51, 58});    
+    System.out.print("\nThe breadth-first traversal for tree2 is ");
+    tree2.breadthFirstTraversal();
+    System.out.print("\nThe height of tree2 is " + tree2.height());   
+  }
+}
+</pre>

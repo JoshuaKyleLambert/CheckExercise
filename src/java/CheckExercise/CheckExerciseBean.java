@@ -21,7 +21,7 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class CheckExerciseBean implements Serializable {
 
-    private String header = "Welcome to test Header";
+    private String header = "Welcome to Exercise01_01 program checker";
     private Boolean chapterSelectable = true;
     private String chapter;
     private Chapter[] chapters;
@@ -72,9 +72,20 @@ public class CheckExerciseBean implements Serializable {
         int chapterNo = Integer.parseInt(chapter.substring(chapter.lastIndexOf(" ")+1));
         setExercises(chapters[chapterNo-1].getExercises());
     }
+    
+    public void loadExercise(){
+        setProgram("/* Paste your " + getProgramName() + " here and click Automatic Check.\n"
+            + "For all programming projects, the numbers should be double \n"
+            + "unless it is explicitly stated as integer.\n"
+            + "If you get a java.util.InputMismatchException error, check if \n"
+            + "your code used input.readInt(), but it should be input.readDouble().\n"
+            + "For integers, use int unless it is explicitly stated as long. */");
+        
+        setHeader("Welcome to " + getProgramName() + " program checker");
+    }
 
     public void chooseExercise() {
-
+        System.out.println(getProgramName());
     }
 
     public void grade() {

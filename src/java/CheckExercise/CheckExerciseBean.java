@@ -6,9 +6,16 @@
 package CheckExercise;
 
 import helpers.*;
+import helpers.Compile;
+import static helpers.Compile.runProcess;
+import java.io.File;
+import java.io.FileWriter;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
@@ -93,7 +100,41 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public void run() {
+        //System.out.println(program);
+        //System.out.println(FacesContext.getCurrentInstance().getExternalContext().getRealPath("\\"));
+        String path = FacesContext.getCurrentInstance().getExternalContext().getRealPath("\\");
 
+        // creates the file
+        try {
+            //Should create a file in your /build/web  directory  
+            File root = new File(path);
+            root.createNewFile();
+            // creates a FileWriter Object and writes to this file
+            File forWriter = new File(root, getProgramName() + ".java");
+            FileWriter writer = new FileWriter(forWriter);
+            // Writes the content to the file
+            writer.write(program);
+            writer.flush();
+            writer.close();
+
+            int k = runProcess("javac " + path + getProgramName() + ".java");
+            if (k == 0) {
+            //This is essentially the command line. Not sure how to deal with the
+            //Input at this point.
+                k = runProcess("java -cp " + path + " " + getProgramName());
+            //Change runProcess to return String and we can output that to 
+            //the page check it etc.
+            }
+
+            //Cleanup files
+            Path detelePathfile = FileSystems.getDefault().getPath(path, getProgramName() + ".class");
+            Files.deleteIfExists(detelePathfile);
+            forWriter.delete();
+            
+
+        } catch (Exception e) {
+           System.out.println(e.getMessage());
+        }
     }
 
     public void checkURL() {

@@ -100,9 +100,9 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public void run() {
-        //System.out.println(program);
-        //System.out.println(FacesContext.getCurrentInstance().getExternalContext().getRealPath("\\"));
-        String path = FacesContext.getCurrentInstance().getExternalContext().getRealPath("\\");
+        // OS independent temp.
+        // File.separator will append the appropriate slash at the end.
+        String path = System.getProperty("java.io.tmpdir") + File.separator;
 
         // creates the file
         try {

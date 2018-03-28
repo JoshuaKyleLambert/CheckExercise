@@ -96,7 +96,7 @@ public class Compile {
 
     }
 
-    public static void run() {
+    public static void executeProgram() {
         //        Output output;
 //       
 //

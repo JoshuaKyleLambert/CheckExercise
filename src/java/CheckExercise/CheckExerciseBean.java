@@ -7,6 +7,8 @@ package CheckExercise;
 
 import helpers.*;
 import helpers.Compile;
+import helpers.Compile.Output;
+import static helpers.Compile.executeProgram;
 import static helpers.Compile.runProcess;
 import java.io.File;
 import java.io.FileWriter;
@@ -56,13 +58,13 @@ public class CheckExerciseBean implements Serializable {
             + " exercises.";
     private String status = "Status Message goes here";
     private String result = "Results in here";
-    
+
     @PostConstruct
     public void init() {
         this.chapters = Utils.populateChapters(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"));
-        this.chapter = (chapters[0] != null) ? chapters[0].toString(): "";
+        this.chapter = (chapters[0] != null) ? chapters[0].toString() : "";
         this.exercises = chapters[0].getExercises();
-        this.programName = (chapters[0] != null && chapters[0].getExercises()[0] != null) ? chapters[0].getExercises()[0].toString(): "";
+        this.programName = (chapters[0] != null && chapters[0].getExercises()[0] != null) ? chapters[0].getExercises()[0].toString() : "";
     }
 
     /**
@@ -76,18 +78,18 @@ public class CheckExerciseBean implements Serializable {
      *
      */
     public void changeChapter() {
-        int chapterNo = Integer.parseInt(chapter.substring(chapter.lastIndexOf(" ")+1));
-        setExercises(chapters[chapterNo-1].getExercises());
+        int chapterNo = Integer.parseInt(chapter.substring(chapter.lastIndexOf(" ") + 1));
+        setExercises(chapters[chapterNo - 1].getExercises());
     }
-    
-    public void loadExercise(){
+
+    public void loadExercise() {
         setProgram("/* Paste your " + getProgramName() + " here and click Automatic Check.\n"
-            + "For all programming projects, the numbers should be double \n"
-            + "unless it is explicitly stated as integer.\n"
-            + "If you get a java.util.InputMismatchException error, check if \n"
-            + "your code used input.readInt(), but it should be input.readDouble().\n"
-            + "For integers, use int unless it is explicitly stated as long. */");
-        
+                + "For all programming projects, the numbers should be double \n"
+                + "unless it is explicitly stated as integer.\n"
+                + "If you get a java.util.InputMismatchException error, check if \n"
+                + "your code used input.readInt(), but it should be input.readDouble().\n"
+                + "For integers, use int unless it is explicitly stated as long. */");
+
         setHeader("Welcome to " + getProgramName() + " program checker");
     }
 
@@ -100,41 +102,10 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public void run() {
-        // OS independent temp.
-        // File.separator will append the appropriate slash at the end.
-        String path = System.getProperty("java.io.tmpdir") + File.separator;
-
-        // creates the file
-        try {
-            //Should create a file in your /build/web  directory  
-            File root = new File(path);
-            root.createNewFile();
-            // creates a FileWriter Object and writes to this file
-            File forWriter = new File(root, getProgramName() + ".java");
-            FileWriter writer = new FileWriter(forWriter);
-            // Writes the content to the file
-            writer.write(program);
-            writer.flush();
-            writer.close();
-
-            int k = runProcess("javac " + path + getProgramName() + ".java");
-            if (k == 0) {
-            //This is essentially the command line. Not sure how to deal with the
-            //Input at this point.
-                k = runProcess("java -cp " + path + " " + getProgramName());
-            //Change runProcess to return String and we can output that to 
-            //the page check it etc.
-            }
-
-            //Cleanup files
-            Path detelePathfile = FileSystems.getDefault().getPath(path, getProgramName() + ".class");
-            Files.deleteIfExists(detelePathfile);
-            forWriter.delete();
-            
-
-        } catch (Exception e) {
-           System.out.println(e.getMessage());
-        }
+        
+        Compile compiler = new Compile(getProgram(), getProgramName());
+        compiler.compile();
+        compiler.cleanUp();
     }
 
     public void checkURL() {

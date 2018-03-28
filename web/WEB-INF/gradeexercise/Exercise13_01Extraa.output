@@ -1,0 +1,6 @@
+21 hours 54 minutes 56 seconds# 
+Elapsed seconds in time1: 165296#
+16 hours 37 minutes 13 seconds#
+Elapsed seconds in time2: 45333433#
+time1.compareTo(time2)? -45168137#
+time1.compareTo(time3)? 0

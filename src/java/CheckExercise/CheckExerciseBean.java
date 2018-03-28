@@ -7,18 +7,9 @@ package CheckExercise;
 
 import helpers.*;
 import helpers.Compile;
-import helpers.Compile.Output;
-import static helpers.Compile.executeProgram;
-import static helpers.Compile.runProcess;
-import java.io.File;
-import java.io.FileWriter;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 

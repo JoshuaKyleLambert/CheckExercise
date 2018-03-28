@@ -38,7 +38,7 @@ public class CheckExerciseBean implements Serializable {
     private Boolean sampleDataProvided = true;
     private String input = "";
     private Boolean gradable = true;
-    private Boolean autoCheck = true;
+    private Boolean autoCheck = true; //Change to true when doing automatic check
     private String resultStyle;
     private String gradeResult = "We recommend that you use this tool to test"
             + " the code. If your code is wrong, the tool will display your"
@@ -94,8 +94,11 @@ public class CheckExerciseBean implements Serializable {
 
     public void run() {
         
+        setAutoCheck(false); //Lets editor for result to display
         Compile compiler = new Compile(getProgram(), getProgramName());
         compiler.compile();
+        result = compiler.getCompilePrint(); //temporary fix to display outputs to xhtml page
+        //System.out.println(result);
         compiler.cleanUp();
     }
 

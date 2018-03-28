@@ -112,7 +112,7 @@
                 editorForResult.getSession().setMode("ace/mode/c");
                 editorForResult.renderer.setShowGutter(false);
                 editorForResult.setReadOnly(true);
-                //            editorForResult.getSession().setUseWrapMode(true);
+                editorForResult.getSession().setUseWrapMode(true);
             });
         </script>
         <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -192,7 +192,8 @@
 
 
                 <h:panelGroup rendered ="#{!checkExerciseBean.isAutoCheck()}">
-                    <div id="editorForResult" style="#{checkExerciseBean.resultStyle}; width:100%; margin: 0 auto;">#{checkExerciseBean.result}</div>
+                    <div id="editorForResult" style="text-align: left; width:575px; height:181px; font-weight: normal; font-size: 96%; color: black; background-color: white;
+                         border: 1px solid; border-color: #f6912f;height:147px;; width:100%; margin: 0 auto;">#{checkExerciseBean.getResult()}</div>
                 </h:panelGroup>
                 <h:panelGroup rendered ="#{checkExerciseBean.isAutoCheck()}" 
                               style="text-align: left; width:575px;  max-width:575px; font-weight: normal;

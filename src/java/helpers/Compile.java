@@ -28,7 +28,8 @@ public class Compile {
     private String program;
     private String programName;
     private String path;
-
+    private String compilePrint = "";
+    
     public static class Output {
 
         public String output = "";
@@ -109,17 +110,18 @@ public class Compile {
 
     }
 
-    public static void printLines(String name, InputStream ins) throws Exception {
-        String line = null;
+    public void printLines(String name, InputStream ins) throws Exception {
+        String line = null; 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(ins));
         while ((line = in.readLine()) != null) {
             System.out.println(name + " " + line);
+            setCompilePrint(compilePrint + "\n" + name + " " + line); //String to be sent to xhtml page (temp?)
         }
     }
 
     //We can change this to return a string that can then be used. 
-    public static int runProcess(String command) throws Exception {
+    public int runProcess(String command) throws Exception {
         Process pro = Runtime.getRuntime().exec(command);
         printLines(command + " stdout:", pro.getInputStream());
         printLines(command + " stderr:", pro.getErrorStream());
@@ -193,6 +195,14 @@ public class Compile {
         result.timeUsed = (int) (System.currentTimeMillis() - startTime);
 
         return result;
+    }
+
+    public String getCompilePrint() {
+        return compilePrint;
+    }
+
+    public void setCompilePrint(String compilePrint) {
+        this.compilePrint = compilePrint;
     }
 
 }

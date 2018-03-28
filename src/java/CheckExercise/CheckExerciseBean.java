@@ -17,7 +17,7 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class CheckExerciseBean implements Serializable {
 
-    private String header = "Welcome to Exercise01_01 program checker";
+    private String header = "Welcome to Exercise01_01 Program Checker";
     private Boolean chapterSelectable = true;
     private String chapter;
     private Chapter[] chapters;
@@ -77,7 +77,7 @@ public class CheckExerciseBean implements Serializable {
                 + "your code used input.readInt(), but it should be input.readDouble().\n"
                 + "For integers, use int unless it is explicitly stated as long. */");
 
-        setHeader("Welcome to " + getProgramName() + " program checker");
+        setHeader("Welcome to " + getProgramName() + " Program Checker");
     }
 
     public void chooseExercise() {

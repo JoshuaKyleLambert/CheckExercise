@@ -1,5 +1,5 @@
 .gitignore
-/dist/
-/build/
-/nbproject/
-/.idea/
+dist/
+build/
+nbproject/
+.idea/

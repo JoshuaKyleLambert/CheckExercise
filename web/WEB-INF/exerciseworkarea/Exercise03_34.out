@@ -1,0 +1,7 @@
+Enter three points for p0, p1, and p2: 4.4
+0.28
+-5.4
+-7.9
+21.2
+9.4
+(21.2, 9.4) is not on the line segment from (4.4, 0.28) to (-5.4, -7.9)

@@ -1,0 +1,16 @@
+Enter the number of students: 5
+Enter a student name: Tim
+Enter a student score: 34.0
+Enter a student name: Tom
+Enter a student score: 56.0
+Enter a student name: Jen
+Enter a student score: 30.0
+Enter a student name: Kim
+Enter a student score: 59.0
+Enter a student name: Joe
+Enter a student score: 45.0
+Kim
+Tom
+Joe
+Tim
+Jen

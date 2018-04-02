@@ -1,0 +1,9 @@
+Enter an integer (0 ends the input): 3
+Enter an integer (0 ends the input): 5
+Enter an integer (0 ends the input): 2
+Enter an integer (0 ends the input): 5
+Enter an integer (0 ends the input): 5
+Enter an integer (0 ends the input): 5
+Enter an integer (0 ends the input): 0
+max is 5
+The count for the max number is 4

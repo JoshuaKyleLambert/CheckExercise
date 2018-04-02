@@ -1,0 +1,10 @@
+Enter the length of a square matrix: 3
+111
+011
+111
+All 1's on row 0
+All 1's on row 2
+All 1's on column 1
+All 1's on column 2
+All 1's on major diagonal
+All 1's on sub-diagonal

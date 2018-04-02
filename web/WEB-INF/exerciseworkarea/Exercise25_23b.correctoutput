@@ -1,0 +1,14 @@
+Enter the number of objects: 8
+Enter the weight of the objects: 8
+7
+1
+3
+2
+8
+2
+9
+Container 1 contains objects with weight 9 1 
+Container 2 contains objects with weight 2 8 
+Container 3 contains objects with weight 3 7 
+Container 4 contains objects with weight 2 8 
+The optimal number of bins is 4

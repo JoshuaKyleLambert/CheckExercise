@@ -1,0 +1,25 @@
+
+-------------
+|   |   |   | 
+-------------
+|   |   |   | 
+-------------
+|   |   |   | 
+-------------
+Enter a row for player X: 1
+Enter a column for player X: 1
+
+-------------
+|   |   |   | 
+-------------
+|   | X |   | 
+-------------
+|   |   |   | 
+-------------
+Enter a row for player O: Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:871)
+	at java.util.Scanner.next(Scanner.java:1497)
+	at java.util.Scanner.nextInt(Scanner.java:2148)
+	at java.util.Scanner.nextInt(Scanner.java:2104)
+	at Exercise08_09.makeAMove(Exercise08_09.java:44)
+	at Exercise08_09.main(Exercise08_09.java:23)

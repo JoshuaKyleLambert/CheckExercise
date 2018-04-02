@@ -1,0 +1,22 @@
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+----------------------
+Drop a red disk at column (0-6): 0
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+|R| | | | | | |
+----------------------
+Drop a yellow disk at column (0-6): Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:871)
+	at java.util.Scanner.next(Scanner.java:1497)
+	at java.util.Scanner.nextInt(Scanner.java:2148)
+	at java.util.Scanner.nextInt(Scanner.java:2104)
+	at Exercise08_20.dropADisc(Exercise08_20.java:45)
+	at Exercise08_20.main(Exercise08_20.java:24)

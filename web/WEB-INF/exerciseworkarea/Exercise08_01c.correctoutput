@@ -1,0 +1,16 @@
+Enter a 3 by 4 matrix row by row: 1.4
+1.0
+1.0
+1.0
+1.0
+1.0
+1.4
+1.0
+1.0
+1.0
+1.0
+1.0
+Sum of the elements at column 0 is 3.4
+Sum of the elements at column 1 is 3.0
+Sum of the elements at column 2 is 3.4
+Sum of the elements at column 3 is 3.0

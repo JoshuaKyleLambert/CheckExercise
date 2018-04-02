@@ -1,0 +1,13 @@
+Enter 6 points: 1.5
+2.5
+-3.0
+4.5
+5.6
+-7.0
+6.5
+-7.0
+8.0
+1.0
+10.0
+2.5
+The rightmost lowest point is (6.5, -7.0)

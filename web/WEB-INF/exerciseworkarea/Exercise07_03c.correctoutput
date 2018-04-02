@@ -1,0 +1,25 @@
+Enter the integers between 1 and 100: 1
+2
+9
+100
+5
+6
+5
+4
+3
+23
+43
+2
+9
+9
+0
+1 occurs 1 time
+2 occurs 2 times
+3 occurs 1 time
+4 occurs 1 time
+5 occurs 2 times
+6 occurs 1 time
+9 occurs 3 times
+23 occurs 1 time
+43 occurs 1 time
+100 occurs 1 time

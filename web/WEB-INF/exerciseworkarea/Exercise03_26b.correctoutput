@@ -1,0 +1,4 @@
+Enter an integer: 300
+Is 300 divisible by 5 and 6? true
+Is 300 divisible by 5 or 6? true
+Is 300 divisible by 5 or 6, but not both? false

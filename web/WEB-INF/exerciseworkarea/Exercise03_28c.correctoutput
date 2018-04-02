@@ -1,0 +1,9 @@
+Enter r1’s center x-, y-coordinates, width, and height: 1.0
+2.0
+3.0
+3.0
+Enter r2’s center x-, y-coordinates, width, and height: 40.0
+45.0
+3.0
+2.0
+r2 does not overlap r1

@@ -1,0 +1,7 @@
+Enter circle1’s center x-, y-coordinates, and radius: 0.0
+0.0
+1.0
+Enter circle2’s center x-, y-coordinates, and radius: 1.0
+1.0
+0.45
+circle2 overlaps circle1

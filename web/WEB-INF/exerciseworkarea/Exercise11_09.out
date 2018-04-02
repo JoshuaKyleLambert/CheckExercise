@@ -1,0 +1,8 @@
+Enter the array size n: 4
+The random array is:
+1001
+1101
+1111
+0000
+The largest row index: 2
+The largest column index: 0, 3

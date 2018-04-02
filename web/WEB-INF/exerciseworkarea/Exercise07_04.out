@@ -1,0 +1,15 @@
+Enter a new score: 2.0
+Enter a new score: 5.0
+Enter a new score: 6.0
+Enter a new score: 5.0
+Enter a new score: 42.0
+Enter a new score: 3.0
+Enter a new score: 23.0
+Enter a new score: 5.0
+Enter a new score: 43.0
+Enter a new score: 2.0
+Enter a new score: -4.0
+count is 10
+Average is 13.6
+Number of scores above or equal to the average 3
+Number of scores below the average 7

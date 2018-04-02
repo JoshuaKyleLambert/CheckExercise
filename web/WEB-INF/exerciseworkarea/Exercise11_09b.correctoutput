@@ -1,0 +1,9 @@
+Enter the array size n: 5
+The random array is:
+01110
+10110
+01011
+10110
+01000
+The largest row index: 0, 1, 2, 3
+The largest column index: 3

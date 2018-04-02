@@ -1,0 +1,4 @@
+Enter an integer: 45
+Is 45 divisible by 5 and 6? false
+Is 45 divisible by 5 or 6? true
+Is 45 divisible by 5 or 6, but not both? true

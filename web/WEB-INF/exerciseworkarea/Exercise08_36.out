@@ -1,0 +1,20 @@
+Enter number n: 4
+Enter 4 rows of letters separated by spaces:  
+R
+B
+C
+D
+Wrong input: the letters must be from A to D
+B
+A
+D
+C
+C
+D
+B
+A
+D
+C
+A
+B
+The input array is not a Latin square

@@ -1,0 +1,13 @@
+Enter the number of cities: 5
+Enter the coordinates of the cities: 2.5
+5.0
+5.1
+3.0
+1.0
+9.0
+5.4
+54.0
+5.5
+2.1
+The central city is at (2.5, 5.0)
+The total distance to all other cities is 60.810516285521615

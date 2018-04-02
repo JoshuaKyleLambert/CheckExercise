@@ -1,0 +1,14 @@
+Enter employee's name: Smith
+Enter number of hours worked in a week: 10.0
+Enter hourly pay rate: 6.75
+Enter federal tax withholding rate: 0.2
+Enter state tax withholding rate: 0.09
+Employee Name: Smith
+Hours Worked: 10.00
+Pay Rate: $6.75
+Gross Pay: $67.50
+Deductions: 
+  Federal Withholding (20.00%):  $13.50
+  State Withholding (9.0%):  $6.08
+  Total Deduction:  $19.58
+Net Pay:   $47.93

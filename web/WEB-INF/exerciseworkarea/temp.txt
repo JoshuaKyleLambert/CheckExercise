@@ -1,0 +1,573 @@
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_01  1>Exercise01_01.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_01Extra  1>Exercise01_01Extra.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_02  1>Exercise01_02.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_02Extra  1>Exercise01_02Extra.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_03  1>Exercise01_03.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_04  1>Exercise01_04.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_05  1>Exercise01_05.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_06  1>Exercise01_06.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_07  1>Exercise01_07.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_08  1>Exercise01_08.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_09  1>Exercise01_09.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_10  1>Exercise01_10.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_11  1>Exercise01_11.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_12  1>Exercise01_12.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise01_13  1>Exercise01_13.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_01  0<C:\ags10e\gradeexercise\Exercise02_01a.input 1>Exercise02_01a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_01  0<C:\ags10e\gradeexercise\Exercise02_01b.input 1>Exercise02_01b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_01  0<C:\ags10e\gradeexercise\Exercise02_01c.input 1>Exercise02_01c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_01Extra  0<C:\ags10e\gradeexercise\Exercise02_01Extraa.input 1>Exercise02_01Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_01Extra  0<C:\ags10e\gradeexercise\Exercise02_01Extrab.input 1>Exercise02_01Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_02  0<C:\ags10e\gradeexercise\Exercise02_02a.input 1>Exercise02_02a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_02  0<C:\ags10e\gradeexercise\Exercise02_02b.input 1>Exercise02_02b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_02  0<C:\ags10e\gradeexercise\Exercise02_02c.input 1>Exercise02_02c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_02Extra  0<C:\ags10e\gradeexercise\Exercise02_02Extraa.input 1>Exercise02_02Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_02Extra  0<C:\ags10e\gradeexercise\Exercise02_02Extrab.input 1>Exercise02_02Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_03  0<C:\ags10e\gradeexercise\Exercise02_03a.input 1>Exercise02_03a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_03  0<C:\ags10e\gradeexercise\Exercise02_03b.input 1>Exercise02_03b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_03  0<C:\ags10e\gradeexercise\Exercise02_03c.input 1>Exercise02_03c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_03Extra  0<C:\ags10e\gradeexercise\Exercise02_03Extraa.input 1>Exercise02_03Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_03Extra  0<C:\ags10e\gradeexercise\Exercise02_03Extrab.input 1>Exercise02_03Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_04  0<C:\ags10e\gradeexercise\Exercise02_04a.input 1>Exercise02_04a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_04  0<C:\ags10e\gradeexercise\Exercise02_04b.input 1>Exercise02_04b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_04  0<C:\ags10e\gradeexercise\Exercise02_04c.input 1>Exercise02_04c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_04Extra  0<C:\ags10e\gradeexercise\Exercise02_04Extraa.input 1>Exercise02_04Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_04Extra  0<C:\ags10e\gradeexercise\Exercise02_04Extrab.input 1>Exercise02_04Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_05  0<C:\ags10e\gradeexercise\Exercise02_05a.input 1>Exercise02_05a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_05  0<C:\ags10e\gradeexercise\Exercise02_05b.input 1>Exercise02_05b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_05  0<C:\ags10e\gradeexercise\Exercise02_05c.input 1>Exercise02_05c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_06  0<C:\ags10e\gradeexercise\Exercise02_06a.input 1>Exercise02_06a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_06  0<C:\ags10e\gradeexercise\Exercise02_06b.input 1>Exercise02_06b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_06  0<C:\ags10e\gradeexercise\Exercise02_06c.input 1>Exercise02_06c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_07  0<C:\ags10e\gradeexercise\Exercise02_07a.input 1>Exercise02_07a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_07  0<C:\ags10e\gradeexercise\Exercise02_07b.input 1>Exercise02_07b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_07  0<C:\ags10e\gradeexercise\Exercise02_07c.input 1>Exercise02_07c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_08  0<C:\ags10e\gradeexercise\Exercise02_08a.input 1>Exercise02_08a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_08  0<C:\ags10e\gradeexercise\Exercise02_08b.input 1>Exercise02_08b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_08  0<C:\ags10e\gradeexercise\Exercise02_08c.input 1>Exercise02_08c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_09  0<C:\ags10e\gradeexercise\Exercise02_09a.input 1>Exercise02_09a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_09  0<C:\ags10e\gradeexercise\Exercise02_09b.input 1>Exercise02_09b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_10  0<C:\ags10e\gradeexercise\Exercise02_10a.input 1>Exercise02_10a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_10  0<C:\ags10e\gradeexercise\Exercise02_10b.input 1>Exercise02_10b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_10  0<C:\ags10e\gradeexercise\Exercise02_10c.input 1>Exercise02_10c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_11  0<C:\ags10e\gradeexercise\Exercise02_11a.input 1>Exercise02_11a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_11  0<C:\ags10e\gradeexercise\Exercise02_11b.input 1>Exercise02_11b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_11  0<C:\ags10e\gradeexercise\Exercise02_11c.input 1>Exercise02_11c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_12  0<C:\ags10e\gradeexercise\Exercise02_12a.input 1>Exercise02_12a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_12  0<C:\ags10e\gradeexercise\Exercise02_12b.input 1>Exercise02_12b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_13  0<C:\ags10e\gradeexercise\Exercise02_13a.input 1>Exercise02_13a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_13  0<C:\ags10e\gradeexercise\Exercise02_13b.input 1>Exercise02_13b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_13  0<C:\ags10e\gradeexercise\Exercise02_13c.input 1>Exercise02_13c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_14  0<C:\ags10e\gradeexercise\Exercise02_14a.input 1>Exercise02_14a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_14  0<C:\ags10e\gradeexercise\Exercise02_14b.input 1>Exercise02_14b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_14  0<C:\ags10e\gradeexercise\Exercise02_14c.input 1>Exercise02_14c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_15  0<C:\ags10e\gradeexercise\Exercise02_15a.input 1>Exercise02_15a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_15  0<C:\ags10e\gradeexercise\Exercise02_15b.input 1>Exercise02_15b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_15  0<C:\ags10e\gradeexercise\Exercise02_15c.input 1>Exercise02_15c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_16  0<C:\ags10e\gradeexercise\Exercise02_16a.input 1>Exercise02_16a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_16  0<C:\ags10e\gradeexercise\Exercise02_16b.input 1>Exercise02_16b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_16  0<C:\ags10e\gradeexercise\Exercise02_16c.input 1>Exercise02_16c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_17  0<C:\ags10e\gradeexercise\Exercise02_17a.input 1>Exercise02_17a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_17  0<C:\ags10e\gradeexercise\Exercise02_17b.input 1>Exercise02_17b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_17  0<C:\ags10e\gradeexercise\Exercise02_17c.input 1>Exercise02_17c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_18  1>Exercise02_18.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_19  0<C:\ags10e\gradeexercise\Exercise02_19a.input 1>Exercise02_19a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_19  0<C:\ags10e\gradeexercise\Exercise02_19b.input 1>Exercise02_19b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_19  0<C:\ags10e\gradeexercise\Exercise02_19c.input 1>Exercise02_19c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_20  0<C:\ags10e\gradeexercise\Exercise02_20a.input 1>Exercise02_20a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_20  0<C:\ags10e\gradeexercise\Exercise02_20b.input 1>Exercise02_20b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_20  0<C:\ags10e\gradeexercise\Exercise02_20c.input 1>Exercise02_20c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_21  0<C:\ags10e\gradeexercise\Exercise02_21a.input 1>Exercise02_21a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_21  0<C:\ags10e\gradeexercise\Exercise02_21b.input 1>Exercise02_21b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_21  0<C:\ags10e\gradeexercise\Exercise02_21c.input 1>Exercise02_21c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_22  0<C:\ags10e\gradeexercise\Exercise02_22a.input 1>Exercise02_22a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_22  0<C:\ags10e\gradeexercise\Exercise02_22b.input 1>Exercise02_22b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_22  0<C:\ags10e\gradeexercise\Exercise02_22c.input 1>Exercise02_22c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_23  0<C:\ags10e\gradeexercise\Exercise02_23a.input 1>Exercise02_23a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise02_23  0<C:\ags10e\gradeexercise\Exercise02_23b.input 1>Exercise02_23b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01  0<C:\ags10e\gradeexercise\Exercise03_01a.input 1>Exercise03_01a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01  0<C:\ags10e\gradeexercise\Exercise03_01b.input 1>Exercise03_01b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01  0<C:\ags10e\gradeexercise\Exercise03_01c.input 1>Exercise03_01c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01Extra  0<C:\ags10e\gradeexercise\Exercise03_01Extraa.input 1>Exercise03_01Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01Extra  0<C:\ags10e\gradeexercise\Exercise03_01Extrab.input 1>Exercise03_01Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_01Extra  0<C:\ags10e\gradeexercise\Exercise03_01Extrac.input 1>Exercise03_01Extrac.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_02  0<C:\ags10e\gradeexercise\Exercise03_02a.input 1>Exercise03_02a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_02  0<C:\ags10e\gradeexercise\Exercise03_02b.input 1>Exercise03_02b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_02Extra  0<C:\ags10e\gradeexercise\Exercise03_02Extraa.input 1>Exercise03_02Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_02Extra  0<C:\ags10e\gradeexercise\Exercise03_02Extrab.input 1>Exercise03_02Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_02Extra  0<C:\ags10e\gradeexercise\Exercise03_02Extrac.input 1>Exercise03_02Extrac.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_03  0<C:\ags10e\gradeexercise\Exercise03_03a.input 1>Exercise03_03a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_03  0<C:\ags10e\gradeexercise\Exercise03_03b.input 1>Exercise03_03b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_03  0<C:\ags10e\gradeexercise\Exercise03_03c.input 1>Exercise03_03c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_03  0<C:\ags10e\gradeexercise\Exercise03_03d.input 1>Exercise03_03d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_03Extra  1>Exercise03_03Extra.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_04  0<C:\ags10e\gradeexercise\Exercise03_04a.input 1>Exercise03_04a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_04  0<C:\ags10e\gradeexercise\Exercise03_04b.input 1>Exercise03_04b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_05  0<C:\ags10e\gradeexercise\Exercise03_05a.input 1>Exercise03_05a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_05  0<C:\ags10e\gradeexercise\Exercise03_05b.input 1>Exercise03_05b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_05  0<C:\ags10e\gradeexercise\Exercise03_05c.input 1>Exercise03_05c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_05  0<C:\ags10e\gradeexercise\Exercise03_05d.input 1>Exercise03_05d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_06  0<C:\ags10e\gradeexercise\Exercise03_06a.input 1>Exercise03_06a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_06  0<C:\ags10e\gradeexercise\Exercise03_06b.input 1>Exercise03_06b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_06  0<C:\ags10e\gradeexercise\Exercise03_06c.input 1>Exercise03_06c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_07  0<C:\ags10e\gradeexercise\Exercise03_07a.input 1>Exercise03_07a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_07  0<C:\ags10e\gradeexercise\Exercise03_07b.input 1>Exercise03_07b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_07  0<C:\ags10e\gradeexercise\Exercise03_07c.input 1>Exercise03_07c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_08  0<C:\ags10e\gradeexercise\Exercise03_08a.input 1>Exercise03_08a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_08  0<C:\ags10e\gradeexercise\Exercise03_08b.input 1>Exercise03_08b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_08  0<C:\ags10e\gradeexercise\Exercise03_08c.input 1>Exercise03_08c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_09  0<C:\ags10e\gradeexercise\Exercise03_09a.input 1>Exercise03_09a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_09  0<C:\ags10e\gradeexercise\Exercise03_09b.input 1>Exercise03_09b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_09  0<C:\ags10e\gradeexercise\Exercise03_09c.input 1>Exercise03_09c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_09  0<C:\ags10e\gradeexercise\Exercise03_09d.input 1>Exercise03_09d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_11  0<C:\ags10e\gradeexercise\Exercise03_11a.input 1>Exercise03_11a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_11  0<C:\ags10e\gradeexercise\Exercise03_11b.input 1>Exercise03_11b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_11  0<C:\ags10e\gradeexercise\Exercise03_11c.input 1>Exercise03_11c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_11  0<C:\ags10e\gradeexercise\Exercise03_11d.input 1>Exercise03_11d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_12  0<C:\ags10e\gradeexercise\Exercise03_12a.input 1>Exercise03_12a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_12  0<C:\ags10e\gradeexercise\Exercise03_12b.input 1>Exercise03_12b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_12  0<C:\ags10e\gradeexercise\Exercise03_12c.input 1>Exercise03_12c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_12  0<C:\ags10e\gradeexercise\Exercise03_12d.input 1>Exercise03_12d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_13  0<C:\ags10e\gradeexercise\Exercise03_13a.input 1>Exercise03_13a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_13  0<C:\ags10e\gradeexercise\Exercise03_13b.input 1>Exercise03_13b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_13  0<C:\ags10e\gradeexercise\Exercise03_13c.input 1>Exercise03_13c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_13  0<C:\ags10e\gradeexercise\Exercise03_13d.input 1>Exercise03_13d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_13  0<C:\ags10e\gradeexercise\Exercise03_13e.input 1>Exercise03_13e.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_18  0<C:\ags10e\gradeexercise\Exercise03_18a.input 1>Exercise03_18a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_18  0<C:\ags10e\gradeexercise\Exercise03_18b.input 1>Exercise03_18b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_18  0<C:\ags10e\gradeexercise\Exercise03_18c.input 1>Exercise03_18c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_18  0<C:\ags10e\gradeexercise\Exercise03_18d.input 1>Exercise03_18d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_18  0<C:\ags10e\gradeexercise\Exercise03_18e.input 1>Exercise03_18e.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_19  0<C:\ags10e\gradeexercise\Exercise03_19a.input 1>Exercise03_19a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_19  0<C:\ags10e\gradeexercise\Exercise03_19b.input 1>Exercise03_19b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_19  0<C:\ags10e\gradeexercise\Exercise03_19c.input 1>Exercise03_19c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_20  0<C:\ags10e\gradeexercise\Exercise03_20a.input 1>Exercise03_20a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_20  0<C:\ags10e\gradeexercise\Exercise03_20b.input 1>Exercise03_20b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_21  0<C:\ags10e\gradeexercise\Exercise03_21a.input 1>Exercise03_21a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_21  0<C:\ags10e\gradeexercise\Exercise03_21b.input 1>Exercise03_21b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_21  0<C:\ags10e\gradeexercise\Exercise03_21c.input 1>Exercise03_21c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_22  0<C:\ags10e\gradeexercise\Exercise03_22a.input 1>Exercise03_22a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_22  0<C:\ags10e\gradeexercise\Exercise03_22b.input 1>Exercise03_22b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_22  0<C:\ags10e\gradeexercise\Exercise03_22c.input 1>Exercise03_22c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_22  0<C:\ags10e\gradeexercise\Exercise03_22d.input 1>Exercise03_22d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23a.input 1>Exercise03_23a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23b.input 1>Exercise03_23b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23c.input 1>Exercise03_23c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23d.input 1>Exercise03_23d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23e.input 1>Exercise03_23e.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23f.input 1>Exercise03_23f.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23g.input 1>Exercise03_23g.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_23  0<C:\ags10e\gradeexercise\Exercise03_23h.input 1>Exercise03_23h.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_25  0<C:\ags10e\gradeexercise\Exercise03_25a.input 1>Exercise03_25a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_25  0<C:\ags10e\gradeexercise\Exercise03_25b.input 1>Exercise03_25b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_25  0<C:\ags10e\gradeexercise\Exercise03_25c.input 1>Exercise03_25c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_25  0<C:\ags10e\gradeexercise\Exercise03_25d.input 1>Exercise03_25d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_26  0<C:\ags10e\gradeexercise\Exercise03_26a.input 1>Exercise03_26a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_26  0<C:\ags10e\gradeexercise\Exercise03_26b.input 1>Exercise03_26b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_26  0<C:\ags10e\gradeexercise\Exercise03_26c.input 1>Exercise03_26c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_27  0<C:\ags10e\gradeexercise\Exercise03_27a.input 1>Exercise03_27a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_27  0<C:\ags10e\gradeexercise\Exercise03_27b.input 1>Exercise03_27b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_27  0<C:\ags10e\gradeexercise\Exercise03_27c.input 1>Exercise03_27c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_27  0<C:\ags10e\gradeexercise\Exercise03_27d.input 1>Exercise03_27d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_28  0<C:\ags10e\gradeexercise\Exercise03_28a.input 1>Exercise03_28a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_28  0<C:\ags10e\gradeexercise\Exercise03_28b.input 1>Exercise03_28b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_28  0<C:\ags10e\gradeexercise\Exercise03_28c.input 1>Exercise03_28c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_29  0<C:\ags10e\gradeexercise\Exercise03_29a.input 1>Exercise03_29a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_29  0<C:\ags10e\gradeexercise\Exercise03_29b.input 1>Exercise03_29b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_29  0<C:\ags10e\gradeexercise\Exercise03_29c.input 1>Exercise03_29c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_29  0<C:\ags10e\gradeexercise\Exercise03_29d.input 1>Exercise03_29d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_29  0<C:\ags10e\gradeexercise\Exercise03_29e.input 1>Exercise03_29e.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_31  0<C:\ags10e\gradeexercise\Exercise03_31a.input 1>Exercise03_31a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_31  0<C:\ags10e\gradeexercise\Exercise03_31b.input 1>Exercise03_31b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_31  0<C:\ags10e\gradeexercise\Exercise03_31c.input 1>Exercise03_31c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_31  0<C:\ags10e\gradeexercise\Exercise03_31d.input 1>Exercise03_31d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_32  0<C:\ags10e\gradeexercise\Exercise03_32a.input 1>Exercise03_32a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_32  0<C:\ags10e\gradeexercise\Exercise03_32b.input 1>Exercise03_32b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_32  0<C:\ags10e\gradeexercise\Exercise03_32c.input 1>Exercise03_32c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_33  0<C:\ags10e\gradeexercise\Exercise03_33a.input 1>Exercise03_33a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_33  0<C:\ags10e\gradeexercise\Exercise03_33b.input 1>Exercise03_33b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_33  0<C:\ags10e\gradeexercise\Exercise03_33c.input 1>Exercise03_33c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_33  0<C:\ags10e\gradeexercise\Exercise03_33d.input 1>Exercise03_33d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_34  0<C:\ags10e\gradeexercise\Exercise03_34a.input 1>Exercise03_34a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_34  0<C:\ags10e\gradeexercise\Exercise03_34b.input 1>Exercise03_34b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_34  0<C:\ags10e\gradeexercise\Exercise03_34c.input 1>Exercise03_34c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_62  0<C:\ags10e\gradeexercise\Exercise03_62a.input 1>Exercise03_62a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_62  0<C:\ags10e\gradeexercise\Exercise03_62b.input 1>Exercise03_62b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_62  0<C:\ags10e\gradeexercise\Exercise03_62c.input 1>Exercise03_62c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_97  0<C:\ags10e\gradeexercise\Exercise03_97a.input 1>Exercise03_97a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_97  0<C:\ags10e\gradeexercise\Exercise03_97b.input 1>Exercise03_97b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise03_97  0<C:\ags10e\gradeexercise\Exercise03_97c.input 1>Exercise03_97c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_01  0<C:\ags10e\gradeexercise\Exercise04_01a.input 1>Exercise04_01a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_01  0<C:\ags10e\gradeexercise\Exercise04_01b.input 1>Exercise04_01b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_01Extra  0<C:\ags10e\gradeexercise\Exercise04_01Extraa.input 1>Exercise04_01Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_01Extra  0<C:\ags10e\gradeexercise\Exercise04_01Extrab.input 1>Exercise04_01Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_02  0<C:\ags10e\gradeexercise\Exercise04_02a.input 1>Exercise04_02a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_02  0<C:\ags10e\gradeexercise\Exercise04_02b.input 1>Exercise04_02b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_02Extra  0<C:\ags10e\gradeexercise\Exercise04_02Extraa.input 1>Exercise04_02Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_02Extra  0<C:\ags10e\gradeexercise\Exercise04_02Extrab.input 1>Exercise04_02Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_03  1>Exercise04_03.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_03Extra  0<C:\ags10e\gradeexercise\Exercise04_03Extraa.input 1>Exercise04_03Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_03Extra  0<C:\ags10e\gradeexercise\Exercise04_03Extrab.input 1>Exercise04_03Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04  0<C:\ags10e\gradeexercise\Exercise04_04a.input 1>Exercise04_04a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04  0<C:\ags10e\gradeexercise\Exercise04_04b.input 1>Exercise04_04b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04  0<C:\ags10e\gradeexercise\Exercise04_04c.input 1>Exercise04_04c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04Extra  0<C:\ags10e\gradeexercise\Exercise04_04Extraa.input 1>Exercise04_04Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04Extra  0<C:\ags10e\gradeexercise\Exercise04_04Extrab.input 1>Exercise04_04Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_04Extra  0<C:\ags10e\gradeexercise\Exercise04_04Extrac.input 1>Exercise04_04Extrac.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_05  0<C:\ags10e\gradeexercise\Exercise04_05a.input 1>Exercise04_05a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_05  0<C:\ags10e\gradeexercise\Exercise04_05b.input 1>Exercise04_05b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_05  0<C:\ags10e\gradeexercise\Exercise04_05c.input 1>Exercise04_05c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_05Extra  0<C:\ags10e\gradeexercise\Exercise04_05Extraa.input 1>Exercise04_05Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_05Extra  0<C:\ags10e\gradeexercise\Exercise04_05Extrab.input 1>Exercise04_05Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_06Extra  0<C:\ags10e\gradeexercise\Exercise04_06Extraa.input 1>Exercise04_06Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_06Extra  0<C:\ags10e\gradeexercise\Exercise04_06Extrab.input 1>Exercise04_06Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_07  0<C:\ags10e\gradeexercise\Exercise04_07a.input 1>Exercise04_07a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_07Extra  0<C:\ags10e\gradeexercise\Exercise04_07Extraa.input 1>Exercise04_07Extraa.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_07Extra  0<C:\ags10e\gradeexercise\Exercise04_07Extrab.input 1>Exercise04_07Extrab.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_08  0<C:\ags10e\gradeexercise\Exercise04_08a.input 1>Exercise04_08a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_08  0<C:\ags10e\gradeexercise\Exercise04_08b.input 1>Exercise04_08b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_08  0<C:\ags10e\gradeexercise\Exercise04_08c.input 1>Exercise04_08c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_09  0<C:\ags10e\gradeexercise\Exercise04_09a.input 1>Exercise04_09a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_09  0<C:\ags10e\gradeexercise\Exercise04_09b.input 1>Exercise04_09b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_09  0<C:\ags10e\gradeexercise\Exercise04_09c.input 1>Exercise04_09c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_10  0<C:\ags10e\gradeexercise\Exercise04_10a.input 1>Exercise04_10a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_10  0<C:\ags10e\gradeexercise\Exercise04_10b.input 1>Exercise04_10b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_11  0<C:\ags10e\gradeexercise\Exercise04_11a.input 1>Exercise04_11a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_11  0<C:\ags10e\gradeexercise\Exercise04_11b.input 1>Exercise04_11b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_11  0<C:\ags10e\gradeexercise\Exercise04_11c.input 1>Exercise04_11c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_11  0<C:\ags10e\gradeexercise\Exercise04_11d.input 1>Exercise04_11d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_12  0<C:\ags10e\gradeexercise\Exercise04_12a.input 1>Exercise04_12a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_12  0<C:\ags10e\gradeexercise\Exercise04_12b.input 1>Exercise04_12b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_12  0<C:\ags10e\gradeexercise\Exercise04_12c.input 1>Exercise04_12c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_12  0<C:\ags10e\gradeexercise\Exercise04_12d.input 1>Exercise04_12d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_13  0<C:\ags10e\gradeexercise\Exercise04_13a.input 1>Exercise04_13a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_13  0<C:\ags10e\gradeexercise\Exercise04_13b.input 1>Exercise04_13b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_13  0<C:\ags10e\gradeexercise\Exercise04_13c.input 1>Exercise04_13c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_14  0<C:\ags10e\gradeexercise\Exercise04_14a.input 1>Exercise04_14a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_14  0<C:\ags10e\gradeexercise\Exercise04_14b.input 1>Exercise04_14b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_14  0<C:\ags10e\gradeexercise\Exercise04_14c.input 1>Exercise04_14c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_14  0<C:\ags10e\gradeexercise\Exercise04_14d.input 1>Exercise04_14d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_15  0<C:\ags10e\gradeexercise\Exercise04_15a.input 1>Exercise04_15a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_15  0<C:\ags10e\gradeexercise\Exercise04_15b.input 1>Exercise04_15b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_15  0<C:\ags10e\gradeexercise\Exercise04_15c.input 1>Exercise04_15c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_15  0<C:\ags10e\gradeexercise\Exercise04_15d.input 1>Exercise04_15d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_17  0<C:\ags10e\gradeexercise\Exercise04_17a.input 1>Exercise04_17a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_17  0<C:\ags10e\gradeexercise\Exercise04_17b.input 1>Exercise04_17b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_17  0<C:\ags10e\gradeexercise\Exercise04_17c.input 1>Exercise04_17c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_17  0<C:\ags10e\gradeexercise\Exercise04_17d.input 1>Exercise04_17d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_18  0<C:\ags10e\gradeexercise\Exercise04_18a.input 1>Exercise04_18a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_18  0<C:\ags10e\gradeexercise\Exercise04_18b.input 1>Exercise04_18b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_18  0<C:\ags10e\gradeexercise\Exercise04_18c.input 1>Exercise04_18c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_18  0<C:\ags10e\gradeexercise\Exercise04_18d.input 1>Exercise04_18d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_19  0<C:\ags10e\gradeexercise\Exercise04_19a.input 1>Exercise04_19a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_19  0<C:\ags10e\gradeexercise\Exercise04_19b.input 1>Exercise04_19b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_19  0<C:\ags10e\gradeexercise\Exercise04_19c.input 1>Exercise04_19c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_19  0<C:\ags10e\gradeexercise\Exercise04_19d.input 1>Exercise04_19d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_20  0<C:\ags10e\gradeexercise\Exercise04_20a.input 1>Exercise04_20a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_20  0<C:\ags10e\gradeexercise\Exercise04_20b.input 1>Exercise04_20b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_21  0<C:\ags10e\gradeexercise\Exercise04_21a.input 1>Exercise04_21a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_21  0<C:\ags10e\gradeexercise\Exercise04_21b.input 1>Exercise04_21b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_22  0<C:\ags10e\gradeexercise\Exercise04_22a.input 1>Exercise04_22a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_22  0<C:\ags10e\gradeexercise\Exercise04_22b.input 1>Exercise04_22b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_23  0<C:\ags10e\gradeexercise\Exercise04_23a.input 1>Exercise04_23a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_23  0<C:\ags10e\gradeexercise\Exercise04_23b.input 1>Exercise04_23b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_24  0<C:\ags10e\gradeexercise\Exercise04_24a.input 1>Exercise04_24a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_24  0<C:\ags10e\gradeexercise\Exercise04_24b.input 1>Exercise04_24b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_24  0<C:\ags10e\gradeexercise\Exercise04_24c.input 1>Exercise04_24c.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_24  0<C:\ags10e\gradeexercise\Exercise04_24d.input 1>Exercise04_24d.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_26  0<C:\ags10e\gradeexercise\Exercise04_26a.input 1>Exercise04_26a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise04_26  0<C:\ags10e\gradeexercise\Exercise04_26b.input 1>Exercise04_26b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_01  0<C:\ags10e\gradeexercise\Exercise05_01a.input 1>Exercise05_01a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_01  0<C:\ags10e\gradeexercise\Exercise05_01b.input 1>Exercise05_01b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_01Extra  1>Exercise05_01Extra.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_02  0<C:\ags10e\gradeexercise\Exercise05_02a.input 1>Exercise05_02a.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_02  0<C:\ags10e\gradeexercise\Exercise05_02b.input 1>Exercise05_02b.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_02Extra  1>Exercise05_02Extra.correctoutput 
+
+c:\ags10e\etext2014\exerciseworkarea>java6 Exercise05_03  1>Exercise05_03.correctoutput 
+Terminate batch job (Y/N)? 

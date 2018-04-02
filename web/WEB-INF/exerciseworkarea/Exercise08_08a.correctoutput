@@ -1,0 +1,24 @@
+Enter the number of points: 8
+Enter 8 points: 0.0
+0.0
+1.0
+1.0
+-1.0
+-1.0
+2.0
+2.0
+-2.0
+-2.0
+-3.0
+-3.0
+-4.0
+-4.0
+5.0
+5.0
+The closest two points are (0.0, 0.0) and (1.0, 1.0)
+The closest two points are (0.0, 0.0) and (-1.0, -1.0)
+The closest two points are (1.0, 1.0) and (2.0, 2.0)
+The closest two points are (-1.0, -1.0) and (-2.0, -2.0)
+The closest two points are (-2.0, -2.0) and (-3.0, -3.0)
+The closest two points are (-3.0, -3.0) and (-4.0, -4.0)
+Their distance is 1.4142135623730951

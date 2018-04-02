@@ -1,0 +1,15 @@
+Enter the number of cities: 6
+Enter the coordinates of the cities: 0.0
+0.5
+-2.5
+5.6
+8.9
+3.4
+-4.5
+-6.9
+5.7
+5.12
+-5.6
+6.6
+The central city is at (0.0, 0.5)
+The total distance to all other cities is 39.31906901359604

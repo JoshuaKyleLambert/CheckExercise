@@ -1,0 +1,10 @@
+Enter a new score: 9.0
+Enter a new score: 2.0
+Enter a new score: 10.0
+Enter a new score: 2.0
+Enter a new score: 1.0
+Enter a new score: -1.0
+count is 5
+Average is 4.8
+Number of scores above or equal to the average 2
+Number of scores below the average 3

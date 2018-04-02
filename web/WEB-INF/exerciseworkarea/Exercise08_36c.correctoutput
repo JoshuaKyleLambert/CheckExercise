@@ -1,0 +1,32 @@
+Enter number n: 5
+Enter 5 rows of letters separated by spaces:  
+A
+B
+C
+D
+A
+Wrong input: the letters must be from A to E
+B
+A
+D
+C
+F
+Wrong input: the letters must be from A to E
+C
+D
+B
+A
+E
+D
+C
+A
+B
+G
+Wrong input: the letters must be from A to E
+D
+C
+A
+B
+G
+Wrong input: the letters must be from A to E
+The input array is not a Latin square

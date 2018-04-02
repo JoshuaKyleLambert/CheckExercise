@@ -1,0 +1,12 @@
+Enter the number of students: 5
+Enter a student name: Smith
+Enter a student score: 60.0
+Enter a student name: Jones
+Enter a student score: 95.0
+Enter a student name: Peterson
+Enter a student score: 85.0
+Enter a student name: Greenlaw
+Enter a student score: 98.0
+Enter a student name: Zhang
+Enter a student score: 95.0
+Top student Greenlaw's score is 98.0

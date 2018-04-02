@@ -1,0 +1,5 @@
+(0-single filer, 1-married jointly or qualifying widow(er),
+2-married separately, 3-head of household)
+Enter the filing status: 4
+Enter the taxable income: 45000.0
+Error: Wrong filing status

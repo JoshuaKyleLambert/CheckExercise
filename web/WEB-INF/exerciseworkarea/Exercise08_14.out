@@ -1,0 +1,9 @@
+Enter the length of a square matrix: 4
+0011
+0111
+0100
+0111
+All 0's on column 0
+No same numbers on a row
+No same numbers on the major diagonal
+No same numbers on the sub-diagonal

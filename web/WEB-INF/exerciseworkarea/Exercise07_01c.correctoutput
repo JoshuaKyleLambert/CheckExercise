@@ -1,0 +1,13 @@
+Enter number of students: 6
+Enter 6 scores: 1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+Student 0 score is 1.0 and grade is A
+Student 1 score is 2.0 and grade is A
+Student 2 score is 3.0 and grade is A
+Student 3 score is 4.0 and grade is A
+Student 4 score is 5.0 and grade is A
+Student 5 score is 6.0 and grade is A

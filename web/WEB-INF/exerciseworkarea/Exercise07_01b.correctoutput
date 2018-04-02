@@ -1,0 +1,11 @@
+Enter number of students: 5
+Enter 5 scores: 5.0
+10.0
+5.0
+6.0
+23.0
+Student 0 score is 5.0 and grade is B
+Student 1 score is 10.0 and grade is B
+Student 2 score is 5.0 and grade is B
+Student 3 score is 6.0 and grade is B
+Student 4 score is 23.0 and grade is A

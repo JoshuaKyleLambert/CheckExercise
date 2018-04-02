@@ -1,0 +1,9 @@
+Enter number of students: 4
+Enter 4 scores: 444440.0
+55.0
+70.0
+58.0
+Student 0 score is 444440.0 and grade is A
+Student 1 score is 55.0 and grade is F
+Student 2 score is 70.0 and grade is F
+Student 3 score is 58.0 and grade is F

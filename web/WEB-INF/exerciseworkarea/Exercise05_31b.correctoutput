@@ -1,0 +1,16 @@
+Enter the initial deposit amount: 10000.0
+Enter annual percentage yield: 2.25
+Enter maturity period (number of months): 12
+Month            CD Value
+    1            10018.75
+    2            10037.54
+    3            10056.36
+    4            10075.21
+    5            10094.10
+    6            10113.03
+    7            10131.99
+    8            10150.99
+    9            10170.02
+   10            10189.09
+   11            10208.19
+   12            10227.33

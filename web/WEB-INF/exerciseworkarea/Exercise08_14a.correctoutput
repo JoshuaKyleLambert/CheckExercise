@@ -1,0 +1,8 @@
+Enter the length of a square matrix: 3
+100
+111
+011
+All 1's on row 1
+All 1's on major diagonal
+No same numbers on a column
+No same numbers on the sub-diagonal

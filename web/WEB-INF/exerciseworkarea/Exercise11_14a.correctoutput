@@ -1,0 +1,11 @@
+Enter five integers for list1: 1
+2
+3
+4
+5
+Enter five integers for list2: 1
+2
+3
+4
+5
+The combined list is 1 2 3 4 5 1 2 3 4 5 

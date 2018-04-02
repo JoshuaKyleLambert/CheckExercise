@@ -1,0 +1,13 @@
+Enter the number of students: 4
+Enter a student name: John
+Enter a student score: 45.0
+Enter a student name: Peter
+Enter a student score: 56.0
+Enter a student name: Steve
+Enter a student score: 34.0
+Enter a student name: Susan
+Enter a student score: 35.0
+Peter
+John
+Susan
+Steve

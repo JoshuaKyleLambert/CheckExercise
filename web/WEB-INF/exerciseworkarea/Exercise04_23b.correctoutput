@@ -1,0 +1,14 @@
+Enter employee's name: Peter
+Enter number of hours worked in a week: 20.0
+Enter hourly pay rate: 7.65
+Enter federal tax withholding rate: 0.4
+Enter state tax withholding rate: 0.09
+Employee Name: Peter
+Hours Worked: 20.00
+Pay Rate: $7.65
+Gross Pay: $153.00
+Deductions: 
+  Federal Withholding (40.00%):  $61.20
+  State Withholding (9.0%):  $13.77
+  Total Deduction:  $74.97
+Net Pay:   $78.03

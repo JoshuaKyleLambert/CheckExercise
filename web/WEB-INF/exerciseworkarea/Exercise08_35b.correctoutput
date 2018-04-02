@@ -1,0 +1,38 @@
+Enter the number of rows in the square matrix: 6
+Enter the matrix row by row: 1
+0
+1
+0
+1
+1
+1
+1
+1
+1
+0
+1
+1
+1
+0
+1
+1
+1
+1
+1
+0
+1
+1
+1
+0
+1
+0
+1
+1
+1
+1
+1
+0
+1
+1
+1
+The maximum square submatrix is at (2, 3) with size 3

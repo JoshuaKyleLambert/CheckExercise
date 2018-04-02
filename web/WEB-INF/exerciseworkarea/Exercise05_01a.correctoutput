@@ -1,0 +1,9 @@
+Enter an integer, the input ends if it is 0: 2
+3
+4
+5
+0
+The number of positives is 4
+The number of negatives is 0
+The total is 14
+The average is 3.5

@@ -1,0 +1,6 @@
+Exception in thread "main" java.lang.NumberFormatException: For input string: "21
+"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at Exercise07_21.main(Exercise07_21.java:6)

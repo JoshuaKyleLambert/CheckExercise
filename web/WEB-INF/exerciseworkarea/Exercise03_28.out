@@ -1,0 +1,9 @@
+Enter r1’s center x-, y-coordinates, width, and height: 2.5
+4.5
+3.7
+9.2
+Enter r2’s center x-, y-coordinates, width, and height: 1.5
+4.5
+0.7
+-9.2
+r2 is inside r1

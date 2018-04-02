@@ -6,10 +6,16 @@
 package helpers;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  *
@@ -18,8 +24,9 @@ import java.util.regex.Pattern;
 public class Utils {
     
     public static final String descriptionsPath = "exercisedescription"; // Directiory name within the project directiory
+    public static final String gradeexercise =  "gradeexercise";
 
-    private static File[] getFiles(String path) {
+    public static File[] getFiles(String path) {
         File currentDirectory = new File(path);
         File[] filesList = currentDirectory.listFiles();
         Arrays.sort(filesList);
@@ -30,7 +37,7 @@ public class Utils {
     // exercises for each chapter using the file name of each description file.
     public static Chapter[] populateChapters(String pathToDir) {
         ArrayList<Chapter> list = new ArrayList<>();
-        File[] descriptionFiles = getFiles(pathToDir + "/" + descriptionsPath);
+        File[] descriptionFiles = getFiles(pathToDir);
         Pattern p = Pattern.compile("Exercise(\\d{2})_(\\d{2}(Extra)?)"); // Group 1 contains the chapter, group 2 contains the exercise
         Matcher m;
         int workingChapter = 1;
@@ -52,15 +59,15 @@ public class Utils {
         }
         return list.toArray(new Chapter[list.size()]);
     }
+    
+    public static Stream<File> getFilesWalk(String path) throws IOException {
+        Stream<File> files = Files.walk(Paths.get(path))
+                .filter(Files::isRegularFile)
+                .map(Path::toFile);
+        return files;
+    }
 
     // This function is only for testing purposes and it should not be used and it should be always commented
 //    public static void main(String[] args) {
-//        for(Chapter c: populateChapters()) {
-//            System.out.println(c+":");
-//            for(Exercise e: c.getExercises()) {
-//                System.out.printf("\t%s\n", e);
-//            }
-//            System.out.println();
-//        }
 //    }
 }

@@ -3,9 +3,13 @@ package CheckExercise;
 
 import helpers.*;
 import helpers.Compile;
+import static helpers.Utils.descriptionsPath;
+import java.io.File;
+import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Arrays;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 
@@ -22,6 +26,7 @@ public class CheckExerciseBean implements Serializable {
     private String chapter;
     private Chapter[] chapters;
     private String programName;
+    private Exercise exercise;
     private Exercise[] exercises;
     private String programStyle;
     private String program = "/* Paste your Exercise01_01 here and click Automatic Check.\n"
@@ -48,10 +53,12 @@ public class CheckExerciseBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        this.chapters = Utils.populateChapters(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"));
+        this.chapters = Utils.populateChapters(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF") + "/" + Utils.descriptionsPath);
         this.chapter = (chapters[0] != null) ? chapters[0].toString() : "";
         this.exercises = chapters[0].getExercises();
-        this.programName = (chapters[0] != null && chapters[0].getExercises()[0] != null) ? chapters[0].getExercises()[0].toString() : "";
+        this.exercise = getExercises()[0];
+        this.programName = (chapters[0] != null && getExercise() != null) ? getExercise().toString() : "";
+        loadExercise();
     }
 
     /**
@@ -70,18 +77,32 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public void loadExercise() {
-        setProgram("/* Paste your " + getProgramName() + " here and click Automatic Check.\n"
+        chooseExercise();
+        setProgram("/* Paste your " + getExercise() + " here and click Automatic Check.\n"
                 + "For all programming projects, the numbers should be double \n"
                 + "unless it is explicitly stated as integer.\n"
                 + "If you get a java.util.InputMismatchException error, check if \n"
                 + "your code used input.readInt(), but it should be input.readDouble().\n"
                 + "For integers, use int unless it is explicitly stated as long. */");
 
-        setHeader("Welcome to " + getProgramName() + " Program Checker");
+        setHeader("Welcome to " + getExercise() + " Program Checker");
     }
 
     public void chooseExercise() {
-        System.out.println(getProgramName());
+        for(Exercise e: getExercises()) {
+            if (programName.equals(e.toString())) {
+                setExercise(e);
+                return;
+            }
+        }
+    }
+
+    public Exercise getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
     public void grade() {

@@ -1,15 +1,9 @@
-
 package CheckExercise;
 
 import helpers.*;
-import helpers.Compile;
-import static helpers.Utils.descriptionsPath;
-import java.io.File;
-import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
-import java.util.Arrays;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 
@@ -49,7 +43,7 @@ public class CheckExerciseBean implements Serializable {
             + " Email y.daniel.liang@gmail.com to request a copy of the extra"
             + " exercises.";
     private String status = "Status Message goes here";
-    private String result = "Results in here";
+    private String result;
 
     @PostConstruct
     public void init() {
@@ -89,7 +83,7 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public void chooseExercise() {
-        for(Exercise e: getExercises()) {
+        for (Exercise e : getExercises()) {
             if (programName.equals(e.toString())) {
                 setExercise(e);
                 return;
@@ -105,18 +99,26 @@ public class CheckExerciseBean implements Serializable {
         this.exercise = exercise;
     }
 
+    // Automatic check
     public void grade() {
 
     }
 
     public void run() {
-        
+
         setAutoCheck(false); //Lets editor for result to display
-        Compile compiler = new Compile(getProgram(), getProgramName());
-        compiler.compile();
-        result = compiler.getCompilePrint(); //temporary fix to display outputs to xhtml page
-        //System.out.println(result);
-        compiler.cleanUp();
+        Compile compiler = new Compile(this.exercise, getProgram());
+        try {
+            if (compiler.run(getInput()) == 0) {
+                setResult(compiler.getOutput().output);
+            } else {
+                setResult(compiler.getOutput().error);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            compiler.cleanUp();
+        }
     }
 
     public void checkURL() {

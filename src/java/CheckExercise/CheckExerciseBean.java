@@ -109,8 +109,9 @@ public class CheckExerciseBean implements Serializable {
         setAutoCheck(false); //Lets editor for result to display
         Compile compiler = new Compile(this.exercise, getProgram());
         try {
-            if (compiler.run(getInput()) == 0) {
+            if (compiler.runWithInput(getInput()) == 0) {
                 setResult(compiler.getOutput().output);
+                System.out.println(compiler.getOutput().output);
             } else {
                 setResult(compiler.getOutput().error);
             }

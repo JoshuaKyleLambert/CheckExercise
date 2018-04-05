@@ -1,6 +1,7 @@
 package CheckExercise;
 
 import helpers.*;
+import java.io.File;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -29,8 +30,8 @@ public class CheckExerciseBean implements Serializable {
             + "If you get a java.util.InputMismatchException error, check if \n"
             + "your code used input.readInt(), but it should be input.readDouble().\n"
             + "For integers, use int unless it is explicitly stated as long. */";
-    private String inputPrompt = "Input Prompts go Here";
-    private Boolean sampleDataProvided = true;
+    private String inputPrompt = "Enter input data for the program (Sample data provided below. You may modify it.)";
+    private Boolean sampleDataProvided = false;
     private String input = "";
     private Boolean gradable = true;
     private Boolean autoCheck = true; //Change to true when doing automatic check
@@ -80,6 +81,24 @@ public class CheckExerciseBean implements Serializable {
                 + "For integers, use int unless it is explicitly stated as long. */");
 
         setHeader("Welcome to " + getExercise() + " Program Checker");
+        
+        // Initialize IO Files for the exercise
+        try{
+            getExercise().setIOFiles(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF") + File.separator + "gradeexercise");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        if(getExercise().getInputFiles().length > 0) {
+            setSampleDataProvided(true);
+            //Display the input string into the input
+            setInput(getExercise().getFirstInputFile());
+        }
+        else{
+            setSampleDataProvided(false);
+        }
+        
     }
 
     public void chooseExercise() {
@@ -110,7 +129,7 @@ public class CheckExerciseBean implements Serializable {
         Compile compiler = new Compile(this.exercise, getProgram());
         try {
             if (compiler.runWithInput(getInput()) == 0) {
-                setResult(compiler.getOutput().output);
+                setResult("command>javac" + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() +"\n" + compiler.getOutput().output);
                 System.out.println(compiler.getOutput().output);
             } else {
                 setResult(compiler.getOutput().error);

@@ -47,6 +47,7 @@ Download the correct output files from www.cs.armstrong.edu/liang/correctoutput.
 Where to get sample code to test your program?
 
 Exercise01_01:
+```
 public class Exercise01_01 {
   public static void main(String[] args) {
     System.out.println("Welcome to Java");
@@ -54,8 +55,10 @@ public class Exercise01_01 {
     System.out.println("Programming is fun");
   }
 }
+```
 
 Exercise02_01:
+```
 import java.util.Scanner;
 
 public class Exercise02_01 {
@@ -74,7 +77,7 @@ public class Exercise02_01 {
       fahrenheit + " Fahrenheit");
   }
 }
-
+```
 
 How to compile and run a program?
 Discuss it in the class.

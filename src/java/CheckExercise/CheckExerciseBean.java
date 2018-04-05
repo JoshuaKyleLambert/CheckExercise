@@ -83,7 +83,7 @@ public class CheckExerciseBean implements Serializable {
 
         setHeader("Welcome to " + getExercise() + " Program Checker");
         //Command text that appears before output
-        setOutputCommandText("command>javac" + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() + "\n");
+        setOutputCommandText("command>javac " + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() + "\n");
         
         // Initialize IO Files for the exercise
         try{

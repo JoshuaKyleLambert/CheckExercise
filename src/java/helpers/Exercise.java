@@ -53,7 +53,8 @@ public class Exercise {
             files = files.filter(p -> !p.getName().contains("Extra"));
         }
         List<File> list = files.collect(Collectors.toList());
-        list.sort(Comparator.naturalOrder());
+        // Sort to compensate for order of the machine-dependent stream
+        list.sort(Comparator.naturalOrder()); 
         return list.toArray(new File[list.size()]);
     }
     
@@ -93,8 +94,8 @@ public class Exercise {
         return inputFiles;
     }
     
+    // First input file to be displayed on the input textfield
     public String getFirstInputFile() {
-        
         if(getInputFiles().length != 0) {
             return readFile(inputFiles[0].getPath()); 
         }

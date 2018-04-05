@@ -45,6 +45,7 @@ public class CheckExerciseBean implements Serializable {
             + " exercises.";
     private String status = "Status Message goes here";
     private String result;
+    private String outputCommandText;
 
     @PostConstruct
     public void init() {
@@ -81,6 +82,8 @@ public class CheckExerciseBean implements Serializable {
                 + "For integers, use int unless it is explicitly stated as long. */");
 
         setHeader("Welcome to " + getExercise() + " Program Checker");
+        //Command text that appears before output
+        setOutputCommandText("command>javac" + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() + "\n");
         
         // Initialize IO Files for the exercise
         try{
@@ -129,7 +132,7 @@ public class CheckExerciseBean implements Serializable {
         Compile compiler = new Compile(this.exercise, getProgram());
         try {
             if (compiler.runWithInput(getInput()) == 0) {
-                setResult("command>javac" + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() +"\n" + compiler.getOutput().output);
+                setResult(outputCommandText + compiler.getOutput().output);
                 System.out.println(compiler.getOutput().output);
             } else {
                 setResult(compiler.getOutput().error);
@@ -284,6 +287,14 @@ public class CheckExerciseBean implements Serializable {
 
     public void setChapter(String chapter) {
         this.chapter = chapter;
+    }
+    
+    public String getOutputCommandText() {
+        return outputCommandText;
+    }
+
+    public void setOutputCommandText(String outputCommandText) {
+        this.outputCommandText = outputCommandText;
     }
 
 }

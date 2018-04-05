@@ -2,12 +2,14 @@
 Java compiler and answer checker.
 
 Team Members: Ayman Bagabas , Benson Tran , Joshua Lambert
+
 Total Points (100 pts)      __________________
 Due:  April 23 2018 before the class
 
 Team Project: CheckExercise Tool
 
 CSCI 5520 Rapid Java Application Development
+
 Armstrong State University
 
 This is a team project. Form a team of 2 or 3 students. But you have to write your own code.
@@ -18,6 +20,7 @@ https://liveexample.pearsoncmg.com/CheckExercise/faces/CheckExercise.xhtml
 
 
 How to get all exercises? 
+
 We will discuss it in details in the class.
 The exercisedescription folder contains all exercise descriptions. 
 Each file in the folder is for one exercise. If the file contains the text 
@@ -92,7 +95,7 @@ http://localhost/CheckExercise/faces/CheckExercise.xhtml
 
 What to submit?
 
-A GitHub URL for your project.
+* A GitHub URL for your project.
 
 
 We will have weekly meetings (every Thursday) in the class to give update of your progress and discuss the project.
@@ -102,17 +105,17 @@ We will have weekly meetings (every Thursday) in the class to give update of you
 
 Grading For the Team Project:
 
-User interface
+* User interface
 
-Choose chapter and exercise and set an exercise.
+* Choose chapter and exercise and set an exercise.
 
-Compile/Run exercises
+* Compile/Run exercises
 
-Grade exercises
+* Grade exercises
 
-Individual Contribution for the team project
+* Individual Contribution for the team project
 
-Bonus: Code coloring (ace editor)
+* Bonus: Code coloring (ace editor)
 
-Class Presentation
+* Class Presentation
 

@@ -248,7 +248,13 @@ public class Compile {
             try {
                 output = executeProgram("java", exercise.toString(), path, 
                         inputFile.getAbsolutePath(), outputFile.getAbsolutePath());
-                output.output = readFromFile(outputFile);
+                // If infinite loop
+                if (output.isInfiniteLoop) {
+                    output.output = "Your program takes too long. "
+                            + "It runs out of the allowed CPU time 10000ms. It may have an infinite loop or the expected input for the program is not provided or provided incorrectly.";
+                } else {
+                    output.output = readFromFile(outputFile);
+                }
             } catch(Exception e) {
                 e.printStackTrace();
             }

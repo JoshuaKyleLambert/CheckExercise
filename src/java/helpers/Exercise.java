@@ -39,10 +39,6 @@ public class Exercise {
         this.isExtra = isExtra;
     }
     
-    public Compile getCompile() {
-        return new Compile(this);
-    }
-    
     private File[] getIOFiles(String path, String ext) throws IOException {
         Stream<File> files = Utils.getFilesWalk(path)
                 .filter(p -> p.getName().contains(this.toString()))

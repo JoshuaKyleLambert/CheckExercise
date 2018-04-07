@@ -23,7 +23,7 @@ public class CheckExerciseBean implements Serializable {
     private String programName;
     private Exercise exercise;
     private Exercise[] exercises;
-    private String programStyle;
+    private String programStyle = "width:575px; font-weight: normal; margin-top: 1px;height:177px; background-color: white; border: 1px solid #f6912f; font-size: 96%;height:257px;";
     private String program = "/* Paste your Exercise01_01 here and click Automatic Check.\n"
             + "For all programming projects, the numbers should be double \n"
             + "unless it is explicitly stated as integer.\n"
@@ -34,7 +34,7 @@ public class CheckExerciseBean implements Serializable {
     private Boolean sampleDataProvided = false;
     private String input = "";
     private Boolean gradable = true;
-    private Boolean autoCheck = true; //Change to true when doing automatic check
+    private Boolean autoCheck; //Change to true when doing automatic check
     private String resultStyle;
     private String gradeResult = "We recommend that you use this tool to test"
             + " the code. If your code is wrong, the tool will display your"
@@ -54,6 +54,7 @@ public class CheckExerciseBean implements Serializable {
         this.exercises = chapters[0].getExercises();
         this.exercise = getExercises()[0];
         this.programName = (chapters[0] != null && getExercise() != null) ? getExercise().toString() : "";
+        this.autoCheck = true;
         loadExercise();
     }
 
@@ -74,6 +75,8 @@ public class CheckExerciseBean implements Serializable {
 
     public void loadExercise() {
         chooseExercise();
+        setResult("");          // Reset resutl
+        setAutoCheck(true);     // Hide output box
         setProgram("/* Paste your " + getExercise() + " here and click Automatic Check.\n"
                 + "For all programming projects, the numbers should be double \n"
                 + "unless it is explicitly stated as integer.\n"
@@ -82,12 +85,11 @@ public class CheckExerciseBean implements Serializable {
                 + "For integers, use int unless it is explicitly stated as long. */");
 
         setHeader("Welcome to " + getExercise() + " Program Checker");
-        //Command text that appears before output
-        setOutputCommandText("command>javac " + getExercise() + ".java \nCompiled successfully\n\n" + "command>java "+ getExercise() + "\n");
         
         // Initialize IO Files for the exercise
         try{
-            getExercise().setIOFiles(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF") + File.separator + "gradeexercise");
+            File path = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"), Utils.gradeexercise);
+            getExercise().setIOFiles(path.getAbsolutePath());
         }
         catch(Exception e){
             e.printStackTrace();
@@ -131,12 +133,7 @@ public class CheckExerciseBean implements Serializable {
         setAutoCheck(false); //Lets editor for result to display
         Compile compiler = new Compile(this.exercise, getProgram());
         try {
-            if (compiler.runWithInput(getInput()) == 0) {
-                setResult(outputCommandText + compiler.getOutput().output);
-                System.out.println(compiler.getOutput().output);
-            } else {
-                setResult(compiler.getOutput().error);
-            }
+            setResult(compiler.run(getInput()));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

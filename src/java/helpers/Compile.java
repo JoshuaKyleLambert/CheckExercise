@@ -30,7 +30,7 @@ public class Compile {
 
     final static int EXECUTION_TIME_ALLOWED = 1000;
     final static int EXECUTION_TIME_INTERVAL = 100;
-    final String TEMP_PATH = System.getProperty("java.io.tmpdir") + File.separator;
+    final String TEMP_PATH = System.getProperty("java.io.tmpdir");
     final String WORKING_DIR = System.getProperty("java.io.tmpdir") + "CheckExercise" + File.separator;
 
     private String program;
@@ -60,7 +60,7 @@ public class Compile {
 
     }
 
-    public Compile(Exercise exercise) {
+    private Compile(Exercise exercise) {
         File temp = new File(TEMP_PATH, "CheckExercise");
         // Create CheckExercise directory within TEMP
         if (!temp.exists()) {
@@ -81,37 +81,37 @@ public class Compile {
         this.setProgram(program);
     }
 
-    public int compile() throws IOException, Exception {
-        //Should create a file in your /build/web  directory  
-        File root = new File(path);
-        root.createNewFile();
-        // creates a FileWriter Object and writes to this file
-        File forWriter = new File(root, exercise.toString() + ".java");
-        FileWriter writer = new FileWriter(forWriter);
-        // Writes the content to the file
-        writer.write(program);
-        writer.flush();
-        writer.close();
-
-        // Return 0 if success otherwise if not
-        return runProcess("javac", forWriter.getAbsolutePath());
-    }
-
-    public int run(String... args) throws IOException, Exception {
-        int exitValue = this.compile();
-        // If compilation succeeded run file with args
-        // else return compilation exitValue.
-        // This way the output of compilation is accessable if 
-        // compilation failed since runProcess sets new output in each run.
-        if (exitValue == 0) {
-            ArrayList<String> argsList = new ArrayList<>(Arrays.asList(new String[]{"java", "-cp", path, exercise.toString()}));
-            // Pass args from user
-            argsList.addAll(Arrays.asList(args));
-            return runProcess(argsList.toArray(new String[argsList.size()]));
-        } else {
-            return exitValue;
-        }
-    }
+//    public int compile() throws IOException, Exception {
+//        //Should create a file in your /build/web  directory  
+//        File root = new File(path);
+//        root.createNewFile();
+//        // creates a FileWriter Object and writes to this file
+//        File forWriter = new File(root, exercise.toString() + ".java");
+//        FileWriter writer = new FileWriter(forWriter);
+//        // Writes the content to the file
+//        writer.write(program);
+//        writer.flush();
+//        writer.close();
+//
+//        // Return 0 if success otherwise if not
+//        return runProcess("javac", forWriter.getAbsolutePath());
+//    }
+//
+//    public int run(String... args) throws IOException, Exception {
+//        int exitValue = this.compile();
+//        // If compilation succeeded run file with args
+//        // else return compilation exitValue.
+//        // This way the output of compilation is accessable if 
+//        // compilation failed since runProcess sets new output in each run.
+//        if (exitValue == 0) {
+//            ArrayList<String> argsList = new ArrayList<>(Arrays.asList(new String[]{"java", "-cp", path, exercise.toString()}));
+//            // Pass args from user
+//            argsList.addAll(Arrays.asList(args));
+//            return runProcess(argsList.toArray(new String[argsList.size()]));
+//        } else {
+//            return exitValue;
+//        }
+//    }
 
     public void cleanUp() {
         //Cleanup files
@@ -122,8 +122,34 @@ public class Compile {
         }
         deletePathfile.delete();
     }
+    
+    private static void writeToFile(File file, String data) throws Exception {
+        Files.deleteIfExists(file.toPath());
+        file.createNewFile();
+        FileWriter fw = new FileWriter(file);
+        fw.write(data);
+        fw.flush();
+        fw.close();
+    }
+    
+    private static String readFromFile(File file) throws Exception {
+        String data = "";
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+        while ((line = br.readLine()) != null) {
+            data += line + System.getProperty("line.separator");
+        }
+        br.close();
+        return data;
+    }
 
     public void setProgram(String program) {
+        try {
+            File source = new File(path, exercise.toString()+".java");
+            writeToFile(source, program);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
         this.program = program;
     }
 
@@ -165,7 +191,8 @@ public class Compile {
     }
 
     public int runWithInput(String input) throws IOException, Exception {
-        int exitValue = this.compile();
+        int exitValue = 0; //this.compile();
+        this.compile();
         
         if (exitValue == 0){
         //Should create a file in your temp directory  
@@ -205,6 +232,45 @@ public class Compile {
                 + "output"));
        this.output.output = slate.useDelimiter("\\Z").next();
        slate.close();
+    }
+    
+    public Output compile() {
+        Output output = compileProgram("javac", path, exercise.toString()+".java");
+        return output;
+    }
+    
+    public String run(File inputFile, File outputFile) {
+        Output output = this.compile();
+        String result = "command>javac " + exercise.toString() + System.getProperty("line.separator");
+        if (output.error.isEmpty()) {
+            result += "Compiled successful" + System.getProperty("line.separator") + System.getProperty("line.separator");
+            result += "command>java " + exercise.toString() + System.getProperty("line.separator");
+            try {
+                output = executeProgram("java", exercise.toString(), path, 
+                        inputFile.getAbsolutePath(), outputFile.getAbsolutePath());
+                output.output = readFromFile(outputFile);
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+            return result + output.output;
+        } else {
+            return result + output.error;
+        }
+    }
+    
+    public String run(String input) {
+        File inputFile = new File(path, exercise.toString()+".input");
+        File outputFile = new File(path, exercise.toString()+".output");
+        try {
+            Files.deleteIfExists(inputFile.toPath());
+            inputFile.createNewFile();
+            Files.deleteIfExists(outputFile.toPath());
+            outputFile.createNewFile();
+            writeToFile(inputFile, input);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return run(inputFile, outputFile);
     }
 
     public static Output executeProgram(String command, String program,
@@ -274,99 +340,99 @@ public class Compile {
         return result;
     }
 //
-//    public static Output compileProgram(String command,
-//            String sourceDirectory, String program) {
-//
-//        final Output result = new Output();
-//
-//        ProcessBuilder pb;
-//
-//        pb = new ProcessBuilder(command, "-classpath", ".;c:\\book",
-//                "-Xlint:unchecked", "-nowarn", "-XDignore.symbol.file", program);
-//
-//        pb.directory(new File(sourceDirectory));
-//
-//        long startTime = System.currentTimeMillis();
-//
-//        Process proc = null;
-//
-//        try {
-//
-//            proc = pb.start();
-//
-//        } catch (Exception ex) {
-//
-//            ex.printStackTrace();
-//
-//        }
-//
-//        // This separate thread destroy the process if it takes too long time
-//        final Process proc1 = proc;
-//
-//        new Thread() {
-//            @Override
-//            public void run() {
-//
-//                Scanner scanner1 = new Scanner(proc1.getInputStream());
-//
-//                while (scanner1.hasNext()) {
-//
-//                    result.output += scanner1.nextLine().replaceAll(" ", "&nbsp;") + "\n";
-//
-//                    //  scanner1.close(); // You could have closed it too soon
-//                }
-//
-//            }
-//
-//        }.start();
-//
-//        new Thread() {
-//
-//            public void run() {
-//
-//                // Process output from proc
-//                Scanner scanner2 = new Scanner(proc1.getErrorStream());
-//
-//                while (scanner2.hasNext()) {
-//
-//                    result.error += scanner2.nextLine() + "\n";
-//
-//                }
-//
-//                // scanner2.close(); // You could have closed it too soon
-//            }
-//
-//        }.start();
-//
-//        try {
-//
-//            //Wait for the external process to finish
-//            int exitCode = proc.waitFor();
-//
-//        } catch (Exception ex) {
-//
-//            ex.printStackTrace();
-//
-//        }
-//
-//        result.output.replaceAll(" ", "&nbsp;");
-//
-//        result.error.replaceAll(" ", "&nbsp;");
-//
-//        // Ignore warnings
-//        if (result.error.indexOf("error") < 0) {
-//
-//            result.error = "";
-//
-//        }
-//
-////        if (result.error.indexOf("error") >= 0 || result.error.indexOf("Error") >= 0)
-////          result.error = "";
-//        result.timeUsed = (int) (System.currentTimeMillis() - startTime);
-//
-//        return result;
-//
-//    }
+    public static Output compileProgram(String command,
+            String sourceDirectory, String program) {
+
+        final Output result = new Output();
+
+        ProcessBuilder pb;
+
+        pb = new ProcessBuilder(command, "-classpath", sourceDirectory,
+                "-Xlint:unchecked", "-nowarn", "-XDignore.symbol.file", program);
+
+        pb.directory(new File(sourceDirectory));
+
+        long startTime = System.currentTimeMillis();
+
+        Process proc = null;
+
+        try {
+
+            proc = pb.start();
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+
+        }
+
+        // This separate thread destroy the process if it takes too long time
+        final Process proc1 = proc;
+
+        new Thread() {
+            @Override
+            public void run() {
+
+                Scanner scanner1 = new Scanner(proc1.getInputStream());
+
+                while (scanner1.hasNext()) {
+
+                    result.output += scanner1.nextLine().replaceAll(" ", "&nbsp;") + System.getProperty("line.separator");
+
+                    //  scanner1.close(); // You could have closed it too soon
+                }
+
+            }
+
+        }.start();
+
+        new Thread() {
+
+            public void run() {
+
+                // Process output from proc
+                Scanner scanner2 = new Scanner(proc1.getErrorStream());
+
+                while (scanner2.hasNext()) {
+
+                    result.error += scanner2.nextLine() + System.getProperty("line.separator");
+
+                }
+
+                // scanner2.close(); // You could have closed it too soon
+            }
+
+        }.start();
+
+        try {
+
+            //Wait for the external process to finish
+            int exitCode = proc.waitFor();
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+
+        }
+
+        result.output.replaceAll(" ", "&nbsp;");
+
+        result.error.replaceAll(" ", "&nbsp;");
+
+        // Ignore warnings
+        if (result.error.indexOf("error") < 0) {
+
+            result.error = "";
+
+        }
+
+//        if (result.error.indexOf("error") >= 0 || result.error.indexOf("Error") >= 0)
+//          result.error = "";
+        result.timeUsed = (int) (System.currentTimeMillis() - startTime);
+
+        return result;
+
+    }
 
     public String getCompilePrint() {
         return compilePrint;

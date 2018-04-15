@@ -32,7 +32,7 @@ public class Compile {
 
     final static int EXECUTION_TIME_ALLOWED = 1000;
     final static int EXECUTION_TIME_INTERVAL = 100;
-    final String TEMP_PATH = System.getProperty("java.io.tmpdir");
+    public final static String TEMP_PATH = System.getProperty("java.io.tmpdir");
     final String WORKING_DIR = System.getProperty("java.io.tmpdir") + "CheckExercise" + File.separator;
 
     private String program;
@@ -253,8 +253,13 @@ public class Compile {
         Output output = compileProgram("javac", path, exercise.toString() + ".java");
         return output;
     }
-
+    
     public String run(File inputFile, File outputFile) {
+        return run(inputFile, outputFile, this.path);
+    }
+
+    public String run(File inputFile, File outputFile, String path) {
+        System.out.println(path);
         Output output = this.compile();
         String result = "command>javac " + exercise.toString() + System.getProperty("line.separator");
         if (output.error.isEmpty()) {

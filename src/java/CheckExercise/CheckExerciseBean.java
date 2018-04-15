@@ -1,7 +1,9 @@
 package CheckExercise;
 
 import helpers.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -24,12 +26,7 @@ public class CheckExerciseBean implements Serializable {
     private Exercise exercise;
     private Exercise[] exercises;
     private String programStyle = "width:575px; font-weight: normal; margin-top: 1px;height:177px; background-color: white; border: 1px solid #f6912f; font-size: 96%;height:257px;";
-    private String program = "/* Paste your Exercise01_01 here and click Automatic Check.\n"
-            + "For all programming projects, the numbers should be double \n"
-            + "unless it is explicitly stated as integer.\n"
-            + "If you get a java.util.InputMismatchException error, check if \n"
-            + "your code used input.readInt(), but it should be input.readDouble().\n"
-            + "For integers, use int unless it is explicitly stated as long. */";
+    private String program;
     private String inputPrompt = "Enter input data for the program (Sample data provided below. You may modify it.)";
     private Boolean sampleDataProvided = false;
     private String input = "";
@@ -54,6 +51,12 @@ public class CheckExerciseBean implements Serializable {
         this.exercises = chapters[0].getExercises();
         this.exercise = getExercises()[0];
         this.programName = (chapters[0] != null && getExercise() != null) ? getExercise().toString() : "";
+        this.program = "/* Paste your "+this.programName+" here and click Automatic Check.\n"
+            + "For all programming projects, the numbers should be double \n"
+            + "unless it is explicitly stated as integer.\n"
+            + "If you get a java.util.InputMismatchException error, check if \n"
+            + "your code used input.readInt(), but it should be input.readDouble().\n"
+            + "For integers, use int unless it is explicitly stated as long. */";
         this.autoCheck = true;
         loadExercise();
     }
@@ -125,6 +128,19 @@ public class CheckExerciseBean implements Serializable {
 
     // Automatic check
     public void grade() {
+        
+//        for(int i = 0; i < exercise.getInputFiles().length; i++) {
+//            File in = exercise.getInputFiles()[i];
+//            File out = exercise.getOutputFiles()[i];
+//            try {
+////                BufferedReader br = new BufferedReader(new FileReader(in));
+//                Compile c = new Compile(exercise, program);
+//                String output = c.run(in, out);
+////                compare(output, hisOutput);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
 
     }
 
@@ -199,7 +215,7 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public String getProgram() {
-        return program;
+        return (program != null) ? program: "";
     }
 
     public void setProgram(String program) {

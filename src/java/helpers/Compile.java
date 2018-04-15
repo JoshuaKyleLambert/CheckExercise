@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -112,7 +114,6 @@ public class Compile {
 //            return exitValue;
 //        }
 //    }
-
     public void cleanUp() {
         //Cleanup files
         File deletePathfile = new File(path);
@@ -120,10 +121,12 @@ public class Compile {
         for (File f : deletePathfile.listFiles()) {
             f.delete();
         }
+        String fil;
         deletePathfile.delete();
     }
-    
+
     private static void writeToFile(File file, String data) throws Exception {
+        fixOutput(data);
         Files.deleteIfExists(file.toPath());
         file.createNewFile();
         FileWriter fw = new FileWriter(file);
@@ -132,6 +135,18 @@ public class Compile {
         fw.close();
     }
     
+    private static String fixOutput(String program) {
+        Pattern findScanner = Pattern.compile("Scanner\\s+([a-zA-Z0-9_]+)");
+        Matcher m = findScanner.matcher(program);
+        if (m.find()) {
+            for(int i = 1; i < m.groupCount(); i++) {
+                System.out.println(m.group(i+1));
+                
+            }
+        }
+        return null;
+    }
+
     private static String readFromFile(File file) throws Exception {
         String data = "";
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -145,9 +160,9 @@ public class Compile {
 
     public void setProgram(String program) {
         try {
-            File source = new File(path, exercise.toString()+".java");
+            File source = new File(path, exercise.toString() + ".java");
             writeToFile(source, program);
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         this.program = program;
@@ -193,33 +208,33 @@ public class Compile {
     public int runWithInput(String input) throws IOException, Exception {
         int exitValue = 0; //this.compile();
         this.compile();
-        
-        if (exitValue == 0){
-        //Should create a file in your temp directory  
-        File root = new File(WORKING_DIR + exercise.toString());
-        root.createNewFile();
-        // creates a FileWriter Object and writes to this file
-        File forWriter = new File(root, exercise.toString() + "inputStreamFile");
-        // Writes the content to the file
-        try (FileWriter writer = new FileWriter(forWriter)) {
+
+        if (exitValue == 0) {
+            //Should create a file in your temp directory  
+            File root = new File(WORKING_DIR + exercise.toString());
+            root.createNewFile();
+            // creates a FileWriter Object and writes to this file
+            File forWriter = new File(root, exercise.toString() + "inputStreamFile");
             // Writes the content to the file
-            writer.write(input);
-            writer.flush();
-        }
+            try (FileWriter writer = new FileWriter(forWriter)) {
+                // Writes the content to the file
+                writer.write(input);
+                writer.flush();
+            }
 
-        System.out.println(WORKING_DIR);
+            System.out.println(WORKING_DIR);
 
-        output = executeProgram("java",
-                exercise.toString(),
-                WORKING_DIR + exercise.toString(),
-                WORKING_DIR + exercise.toString() + File.separator + exercise.toString() + "inputStreamFile",
-                WORKING_DIR + exercise.toString() + File.separator + exercise.toString() + "output");
+            output = executeProgram("java",
+                    exercise.toString(),
+                    WORKING_DIR + exercise.toString(),
+                    WORKING_DIR + exercise.toString() + File.separator + exercise.toString() + "inputStreamFile",
+                    WORKING_DIR + exercise.toString() + File.separator + exercise.toString() + "output");
 
-        // Return 0 if success otherwise if not
-        //return runProcess("javac", forWriter.getAbsolutePath());
-        setOutputString(output);
-        return 0;
-        } else { 
+            // Return 0 if success otherwise if not
+            //return runProcess("javac", forWriter.getAbsolutePath());
+            setOutputString(output);
+            return 0;
+        } else {
             return 1;
         }
     }
@@ -230,15 +245,15 @@ public class Compile {
                 + File.separator
                 + exercise.toString()
                 + "output"));
-       this.output.output = slate.useDelimiter("\\Z").next();
-       slate.close();
+        this.output.output = slate.useDelimiter("\\Z").next();
+        slate.close();
     }
-    
+
     public Output compile() {
-        Output output = compileProgram("javac", path, exercise.toString()+".java");
+        Output output = compileProgram("javac", path, exercise.toString() + ".java");
         return output;
     }
-    
+
     public String run(File inputFile, File outputFile) {
         Output output = this.compile();
         String result = "command>javac " + exercise.toString() + System.getProperty("line.separator");
@@ -246,16 +261,19 @@ public class Compile {
             result += "Compiled successful" + System.getProperty("line.separator") + System.getProperty("line.separator");
             result += "command>java " + exercise.toString() + System.getProperty("line.separator");
             try {
-                output = executeProgram("java", exercise.toString(), path, 
-                        inputFile.getAbsolutePath(), outputFile.getAbsolutePath());
+                String inputPath = (inputFile != null) ? inputFile.getAbsolutePath(): null;
+                String outputPath = outputFile.getAbsolutePath();
+                output = executeProgram("java", exercise.toString(), path,
+                        inputPath, outputPath);
                 // If infinite loop
                 if (output.isInfiniteLoop) {
                     output.output = "Your program takes too long. "
-                            + "It runs out of the allowed CPU time 10000ms. It may have an infinite loop or the expected input for the program is not provided or provided incorrectly.";
+                            + "It runs out of the allowed CPU time "+EXECUTION_TIME_ALLOWED+"ms. "
+                            + "It may have an infinite loop or the expected input for the program is not provided or provided incorrectly.";
                 } else {
                     output.output = readFromFile(outputFile);
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return result + output.output;
@@ -263,13 +281,17 @@ public class Compile {
             return result + output.error;
         }
     }
-    
+
     public String run(String input) {
-        File inputFile = new File(path, exercise.toString()+".input");
-        File outputFile = new File(path, exercise.toString()+".output");
+        File inputFile = new File(path, exercise.toString() + ".input");
+        File outputFile = new File(path, exercise.toString() + ".output");
         try {
-            Files.deleteIfExists(inputFile.toPath());
-            inputFile.createNewFile();
+            if (!input.isEmpty()) {
+                Files.deleteIfExists(inputFile.toPath());
+                inputFile.createNewFile();
+            } else {
+                inputFile = null;
+            }
             Files.deleteIfExists(outputFile.toPath());
             outputFile.createNewFile();
             writeToFile(inputFile, input);
@@ -346,6 +368,7 @@ public class Compile {
         return result;
     }
 //
+
     public static Output compileProgram(String command,
             String sourceDirectory, String program) {
 

@@ -156,8 +156,8 @@ public class CheckExerciseBean implements Serializable {
                     out1.createNewFile();
                     Files.deleteIfExists(out2.toPath());
                     out2.createNewFile();
-                    String output1 = "";//c.run((in == null) ? null: new File(in), out1, c.getPath());
                     c.compile();
+                    String output1 = "";//c.run((in == null) ? null: new File(in), out1, c.getPath());
                     Compile.executeProgram("java", exercise.toString(),
                             c.getPath(), in, out1.getAbsolutePath());
                     String output2 = "";
@@ -186,18 +186,18 @@ public class CheckExerciseBean implements Serializable {
                         userHighlightedOutput.replace(iterator, iterator + 1, replaceUser);
                         HisHighlightedOutput.replace(iterator, iterator + 1, replaceHis);
                         setGradeResult("<br/>Your output:<br/><pre>"+userHighlightedOutput + "</pre><br/>The correct output:<br/><pre>" + HisHighlightedOutput + "</pre>");
+                        Compile.cleanUp();
                         return;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            c.cleanUp();
             setGradeResult("<br/>Your program is correct.");
         } else {
             setGradeResult("<br/>This exercise is not gradable.");
         }
-
+        Compile.cleanUp();
     }
 
     public void run() {
@@ -209,7 +209,7 @@ public class CheckExerciseBean implements Serializable {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            compiler.cleanUp();
+            Compile.cleanUp();
         }
     }
 

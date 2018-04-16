@@ -114,14 +114,18 @@ public class Compile {
 //            return exitValue;
 //        }
 //    }
-    public void cleanUp() {
+    public static void cleanUp() {
         //Cleanup files
-        File deletePathfile = new File(path);
+        File deletePathfile = new File(TEMP_PATH, "CheckExercise");
         // Delete all files within directory before deleting directory
         for (File f : deletePathfile.listFiles()) {
+            if (f.isDirectory()) {
+                for(File sub: f.listFiles()) {
+                    sub.delete();
+                }
+            }
             f.delete();
         }
-        String fil;
         deletePathfile.delete();
     }
 

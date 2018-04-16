@@ -184,18 +184,22 @@ public class CheckExerciseBean implements Serializable {
 //                    }
 //                    System.out.println(output1);
 //                    System.out.println(output2);
-                    if (!output1.equals(output2)) {
-                        int iterator = 0;
-                        while (output1.charAt(iterator) == output2.charAt(iterator)) {
+                    StringBuilder userHighlightedOutput = new StringBuilder(output1);
+                    StringBuilder HisHighlightedOutput = new StringBuilder(output2);
+                    int iterator = 0;
+                    if (output1.isEmpty()) {
+                        setGradeResult("<br/>Your program is incorrect.<br/><span style=\"background-color:red;color:white;\">Your output:</span><br/><pre>"+userHighlightedOutput + "</pre><br/><span style=\"background-color:red;color:white;\">The correct output:</span><br/><pre>" + HisHighlightedOutput + "</pre>");
+                        Compile.cleanUp();
+                        return;
+                    } else if (!output1.equals(output2)) {
+                        while (iterator < output1.length()-1 && output1.charAt(iterator) == output2.charAt(iterator)) {
                             iterator++;
                         }
-                        StringBuilder userHighlightedOutput = new StringBuilder(output1);
-                        StringBuilder HisHighlightedOutput = new StringBuilder(output2);
                         String replaceUser = "<span style=\"background-color:red;\">" + output1.charAt(iterator) + "</span>";
                         String replaceHis = "<span style=\"background-color:red;\">" + output2.charAt(iterator) + "</span>";
                         userHighlightedOutput.replace(iterator, iterator + 1, replaceUser);
                         HisHighlightedOutput.replace(iterator, iterator + 1, replaceHis);
-                        setGradeResult("<br/>Your output:<br/><pre>"+userHighlightedOutput + "</pre><br/>The correct output:<br/><pre>" + HisHighlightedOutput + "</pre>");
+                        setGradeResult("<br/>Your program is incorrect.<br/><span style=\"background-color:red;color:white;\">Your output:</span><br/><pre>"+userHighlightedOutput + "</pre><br/><span style=\"background-color:red;color:white;\">The correct output:</span><br/><pre>" + HisHighlightedOutput + "</pre>");
                         Compile.cleanUp();
                         return;
                     }

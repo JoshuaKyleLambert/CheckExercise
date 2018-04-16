@@ -138,7 +138,7 @@ public class CheckExerciseBean implements Serializable {
 
             Compile c = new Compile(exercise, program);
 //                Compile c2 = new Compile(exercise);
-            System.out.println(exercise.getInputFiles().length);
+//            System.out.println(exercise.getInputFiles().length);
             for (int i = 0; i <= exercise.getInputFiles().length; i++) {
                 String in;
                 if (i == 0) {
@@ -156,24 +156,34 @@ public class CheckExerciseBean implements Serializable {
                     out1.createNewFile();
                     Files.deleteIfExists(out2.toPath());
                     out2.createNewFile();
-                    c.compile();
-                    String output1 = "";//c.run((in == null) ? null: new File(in), out1, c.getPath());
-                    Compile.executeProgram("java", exercise.toString(),
-                            c.getPath(), in, out1.getAbsolutePath());
-                    String output2 = "";
-                    Compile.executeProgram("java", exercise.toString(),
-                            workarea.getAbsolutePath(), in, out2.getAbsolutePath());
-                    BufferedReader br = new BufferedReader(new FileReader(out1));
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        output1 += line + System.getProperty("line.separator");
+                    Compile.Output compileOutput = c.compile();
+                    String compileError = compileOutput.error;
+                    System.out.println(compileOutput.output);
+                    System.out.println(compileError);
+                    String output1, output2;
+                    if (compileError.isEmpty()) {
+                        output1 = c.run((in == null) ? null: new File(in), out1, c.getPath());
+    //                    Compile.executeProgram("java", exercise.toString(),
+    //                            c.getPath(), in, out1.getAbsolutePath());
+                        output2 = c.run((in == null) ? null: new File(in), out2, workarea.getAbsolutePath());
+                    } else {
+                        setAutoCheck(false);
+                        setResult(compileError);
+                        return;
                     }
-                    br = new BufferedReader(new FileReader(out2));
-                    while ((line = br.readLine()) != null) {
-                        output2 += line + System.getProperty("line.separator");
-                    }
-                    System.out.println(output1);
-                    System.out.println(output2);
+//                    Compile.executeProgram("java", exercise.toString(),
+//                            workarea.getAbsolutePath(), in, out2.getAbsolutePath());
+//                    BufferedReader br = new BufferedReader(new FileReader(out1));
+//                    String line;
+//                    while ((line = br.readLine()) != null) {
+//                        output1 += line + System.getProperty("line.separator");
+//                    }
+//                    br = new BufferedReader(new FileReader(out2));
+//                    while ((line = br.readLine()) != null) {
+//                        output2 += line + System.getProperty("line.separator");
+//                    }
+//                    System.out.println(output1);
+//                    System.out.println(output2);
                     if (!output1.equals(output2)) {
                         int iterator = 0;
                         while (output1.charAt(iterator) == output2.charAt(iterator)) {

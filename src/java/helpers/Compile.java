@@ -70,7 +70,7 @@ public class Compile {
         }
         // Create a directory with the exercise name
         File exercisePath = new File(temp, exercise.toString());
-        System.out.println(exercisePath.getAbsolutePath());
+//        System.out.println(exercisePath.getAbsolutePath());
         exercisePath.mkdir();
         this.path = exercisePath.getAbsolutePath();
         this.program = ""; // Init program to be empty
@@ -230,7 +230,7 @@ public class Compile {
                 writer.flush();
             }
 
-            System.out.println(WORKING_DIR);
+//            System.out.println(WORKING_DIR);
 
             output = executeProgram("java",
                     exercise.toString(),

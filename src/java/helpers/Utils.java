@@ -25,6 +25,7 @@ public class Utils {
     
     public static final String descriptionsPath = "exercisedescription"; // Directiory name within the project directiory
     public static final String gradeexercise =  "gradeexercise";
+    public static final String exerciseworkarea =  "exerciseworkarea";
 
     public static File[] getFiles(String path) {
         File currentDirectory = new File(path);

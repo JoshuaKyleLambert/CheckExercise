@@ -169,6 +169,7 @@ public class CheckExerciseBean implements Serializable {
                     } else {
                         setAutoCheck(false);
                         setResult(compileError);
+                        Compile.cleanUp();
                         return;
                     }
 //                    Compile.executeProgram("java", exercise.toString(),

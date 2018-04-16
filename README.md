@@ -1,14 +1,17 @@
 # CheckExercise
-Java compiler and answer checker.
+Java compiler and answer checker. **See below for a Sample Run** 
+
+Displayed below is the assignment prompt given for this assignment.
 
 Team Members: Ayman Bagabas , Benson Tran , Joshua Lambert
 
 Total Points (100 pts)      __________________
+
 Due:  April 23 2018 before the class
 
 Team Project: CheckExercise Tool
 
-CSCI 5520 Rapid Java Application Development
+**CSCI 5520 Rapid Java Application Development**
 
 Armstrong State University
 
@@ -119,3 +122,9 @@ Grading For the Team Project:
 
 * Class Presentation
 
+
+# Sample Run
+
+This is a preview of the automatic assignment check function.
+
+![alt text](https://thumbs.gfycat.com/ThatFineKob-size_restricted.gif)

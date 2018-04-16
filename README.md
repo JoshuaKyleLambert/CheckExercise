@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="460" height="300" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Armstrong_State_Pirates_logo.svg/500px-Armstrong_State_Pirates_logo.svg.png">
+</p>
+
 # CheckExercise
 Java compiler and answer checker. **See below for a Sample Run** 
 

@@ -185,7 +185,7 @@
                                      action ="#{checkExerciseBean.run}"/>&nbsp;
                     <h:commandButton value="Automatic Check" class="btn btn-sm btn-primary" style ="font-style: normal; font-weight: normal; font-size: 100%"
                                      rendered="#{checkExerciseBean.isGradable()}" action ="#{checkExerciseBean.grade}"/>
-                    <h:outputLabel class ="gradingStatusStyle" style="width:300px;" value="#{checkExerciseBean.getStatus()}"/>
+<!--                    <h:outputLabel class ="gradingStatusStyle" style="width:300px;" value="#{checkExerciseBean.getStatus()}"/>-->
 
                 </h:panelGroup>
 
@@ -200,7 +200,7 @@
                               ; padding-left:5px; ; padding-top: -20px; width:100%; margin: 0 auto;">
 
 
-                    <h:outputText  escape="fasle" style="width:100%; margin: 0 auto; height: 500px;"
+                    <h:outputText  escape="false" style="width:100%; margin: 0 auto; height: 500px;"
                                    value = "#{checkExerciseBean.gradeResult}" />
                 </h:panelGroup>
                 <div class = "messageStyle" style="width:100%; margin: 0 auto;">Please report errors to <a href="mailto:y.daniel.liang@gmail.com" 

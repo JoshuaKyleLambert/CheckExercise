@@ -7,6 +7,7 @@ import java.io.FileReader;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.nio.file.Files;
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 
@@ -129,18 +130,40 @@ public class CheckExerciseBean implements Serializable {
     // Automatic check
     public void grade() {
         
-//        for(int i = 0; i < exercise.getInputFiles().length; i++) {
-//            File in = exercise.getInputFiles()[i];
+                Compile c = new Compile(exercise, program);
+//                Compile c2 = new Compile(exercise);
+        for(int i = 0; i < exercise.getInputFiles().length; i++) {
+            File in = exercise.getInputFiles()[i];
 //            File out = exercise.getOutputFiles()[i];
-//            try {
-////                BufferedReader br = new BufferedReader(new FileReader(in));
-//                Compile c = new Compile(exercise, program);
-//                String output = c.run(in, out);
-////                compare(output, hisOutput);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
+            File out1 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output1.output");
+            File out2 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output2.output");
+            File workarea = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"), Utils.exerciseworkarea);
+            System.out.println(out2.getAbsolutePath());
+            try {
+//                BufferedReader br = new BufferedReader(new FileReader(in));
+                
+                String output1 = c.run(in, out1);
+                String output2 = c.run(in, out2, workarea.getAbsolutePath());
+                System.out.println(output1);
+                System.out.println(output2);
+                if (!output1.equals(output2)) {
+                    int iterator = 0;
+                    while(output1.charAt(iterator) == output2.charAt(iterator)) iterator++;
+                    StringBuilder userHighlightedOutput = new StringBuilder(output1);
+                    StringBuilder HisHighlightedOutput = new StringBuilder(output2);
+                    String replaceUser = "<span style=\"background-color=red;\">" + output1.charAt(iterator) + "</span>";
+                    String replaceHis = "<span style=\"background-color=red;\">" + output2.charAt(iterator) + "</span>";
+                    userHighlightedOutput.replace(iterator, iterator+1, replaceUser);
+                    HisHighlightedOutput.replace(iterator, iterator+1, replaceHis);
+                    setGradeResult(userHighlightedOutput + "\n\n" + HisHighlightedOutput);
+                    return;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        c.cleanUp();
+        setGradeResult("Correct!");
 
     }
 

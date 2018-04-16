@@ -126,7 +126,7 @@ public class Compile {
     }
 
     private static void writeToFile(File file, String data) throws Exception {
-        fixOutput(data);
+//        fixOutput(data);
         Files.deleteIfExists(file.toPath());
         file.createNewFile();
         FileWriter fw = new FileWriter(file);
@@ -145,6 +145,10 @@ public class Compile {
             }
         }
         return null;
+    }
+    
+    public String getPath() {
+        return this.path;
     }
 
     private static String readFromFile(File file) throws Exception {
@@ -255,21 +259,24 @@ public class Compile {
     }
     
     public String run(File inputFile, File outputFile) {
-        return run(inputFile, outputFile, this.path);
-    }
-
-    public String run(File inputFile, File outputFile, String path) {
-        System.out.println(path);
         Output output = this.compile();
         String result = "command>javac " + exercise.toString() + System.getProperty("line.separator");
         if (output.error.isEmpty()) {
             result += "Compiled successful" + System.getProperty("line.separator") + System.getProperty("line.separator");
             result += "command>java " + exercise.toString() + System.getProperty("line.separator");
+            return result + run(inputFile, outputFile, this.path);
+        } else {
+            return result + System.getProperty("line.separator") + output.error;
+        }
+    }
+
+    public String run(File inputFile, File outputFile, String path) {
+//        System.out.println(path);
+            Output output = new Output();
             try {
                 String inputPath = (inputFile != null) ? inputFile.getAbsolutePath(): null;
                 String outputPath = outputFile.getAbsolutePath();
-                output = executeProgram("java", exercise.toString(), path,
-                        inputPath, outputPath);
+                output = executeProgram("java", exercise.toString(), path, inputPath, outputPath);
                 // If infinite loop
                 if (output.isInfiniteLoop) {
                     output.output = "Your program takes too long. "
@@ -281,10 +288,7 @@ public class Compile {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return result + output.output;
-        } else {
-            return result + output.error;
-        }
+            return output.output;
     }
 
     public String run(String input) {
@@ -294,12 +298,12 @@ public class Compile {
             if (!input.isEmpty()) {
                 Files.deleteIfExists(inputFile.toPath());
                 inputFile.createNewFile();
+                writeToFile(inputFile, input);
             } else {
                 inputFile = null;
             }
             Files.deleteIfExists(outputFile.toPath());
             outputFile.createNewFile();
-            writeToFile(inputFile, input);
         } catch (Exception e) {
             e.printStackTrace();
         }

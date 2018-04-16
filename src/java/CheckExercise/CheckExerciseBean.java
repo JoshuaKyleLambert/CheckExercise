@@ -34,14 +34,8 @@ public class CheckExerciseBean implements Serializable {
     private Boolean gradable = true;
     private Boolean autoCheck; //Change to true when doing automatic check
     private String resultStyle;
-    private String gradeResult = "We recommend that you use this tool to test"
-            + " the code. If your code is wrong, the tool will display your"
-            + " output and the correct output so to help you debug the error. "
-            + "Compile/Run is provided for your convenience to compile and run"
-            + " the code. The extra exercises are available for instructors."
-            + " Email y.daniel.liang@gmail.com to request a copy of the extra"
-            + " exercises.";
-    private String status = "Status Message goes here";
+    private String gradeResult;
+    private String status;
     private String result;
     private String outputCommandText;
 
@@ -52,12 +46,12 @@ public class CheckExerciseBean implements Serializable {
         this.exercises = chapters[0].getExercises();
         this.exercise = getExercises()[0];
         this.programName = (chapters[0] != null && getExercise() != null) ? getExercise().toString() : "";
-        this.program = "/* Paste your "+this.programName+" here and click Automatic Check.\n"
-            + "For all programming projects, the numbers should be double \n"
-            + "unless it is explicitly stated as integer.\n"
-            + "If you get a java.util.InputMismatchException error, check if \n"
-            + "your code used input.readInt(), but it should be input.readDouble().\n"
-            + "For integers, use int unless it is explicitly stated as long. */";
+        this.program = "/* Paste your " + this.programName + " here and click Automatic Check.\n"
+                + "For all programming projects, the numbers should be double \n"
+                + "unless it is explicitly stated as integer.\n"
+                + "If you get a java.util.InputMismatchException error, check if \n"
+                + "your code used input.readInt(), but it should be input.readDouble().\n"
+                + "For integers, use int unless it is explicitly stated as long. */";
         this.autoCheck = true;
         loadExercise();
     }
@@ -89,25 +83,34 @@ public class CheckExerciseBean implements Serializable {
                 + "For integers, use int unless it is explicitly stated as long. */");
 
         setHeader("Welcome to " + getExercise() + " Program Checker");
-        
+
         // Initialize IO Files for the exercise
-        try{
+        try {
             File path = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"), Utils.gradeexercise);
             getExercise().setIOFiles(path.getAbsolutePath());
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        if(getExercise().getInputFiles().length > 0) {
+
+        if (getExercise().getInputFiles().length > 0) {
             setSampleDataProvided(true);
             //Display the input string into the input
             setInput(getExercise().getFirstInputFile());
-        }
-        else{
+            // Set gradable
+//            setGradable(true);
+        } else {
             setSampleDataProvided(false);
+//            setGradable(false);
         }
-        
+        // Clear grade result
+        setGradeResult("<span style=\"color:red;\">We recommend that you use this tool to test"
+            + " the code. If your code is wrong, the tool will display your"
+            + " output and the correct output so to help you debug the error.</span> "
+            + "Compile/Run is provided for your convenience to compile and run"
+            + " the code. The extra exercises are available for instructors."
+            + " Email y.daniel.liang@gmail.com to request a copy of the extra"
+            + " exercises.");
+
     }
 
     public void chooseExercise() {
@@ -129,41 +132,71 @@ public class CheckExerciseBean implements Serializable {
 
     // Automatic check
     public void grade() {
-        
-                Compile c = new Compile(exercise, program);
+        setResult("");          // Reset resutl
+        setAutoCheck(true);     // Hide output box
+        if (gradable) {
+
+            Compile c = new Compile(exercise, program);
 //                Compile c2 = new Compile(exercise);
-        for(int i = 0; i < exercise.getInputFiles().length; i++) {
-            File in = exercise.getInputFiles()[i];
-//            File out = exercise.getOutputFiles()[i];
-            File out1 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output1.output");
-            File out2 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output2.output");
-            File workarea = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"), Utils.exerciseworkarea);
-            System.out.println(out2.getAbsolutePath());
-            try {
-//                BufferedReader br = new BufferedReader(new FileReader(in));
-                
-                String output1 = c.run(in, out1);
-                String output2 = c.run(in, out2, workarea.getAbsolutePath());
-                System.out.println(output1);
-                System.out.println(output2);
-                if (!output1.equals(output2)) {
-                    int iterator = 0;
-                    while(output1.charAt(iterator) == output2.charAt(iterator)) iterator++;
-                    StringBuilder userHighlightedOutput = new StringBuilder(output1);
-                    StringBuilder HisHighlightedOutput = new StringBuilder(output2);
-                    String replaceUser = "<span style=\"background-color=red;\">" + output1.charAt(iterator) + "</span>";
-                    String replaceHis = "<span style=\"background-color=red;\">" + output2.charAt(iterator) + "</span>";
-                    userHighlightedOutput.replace(iterator, iterator+1, replaceUser);
-                    HisHighlightedOutput.replace(iterator, iterator+1, replaceHis);
-                    setGradeResult(userHighlightedOutput + "\n\n" + HisHighlightedOutput);
-                    return;
+            System.out.println(exercise.getInputFiles().length);
+            for (int i = 0; i <= exercise.getInputFiles().length; i++) {
+                String in;
+                if (i == 0) {
+                    in = null;
+                } else {
+                    in = exercise.getInputFiles()[i-1].getAbsolutePath();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(in);
+//            File out = exercise.getOutputFiles()[i];
+                File out1 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output1.output");
+                File out2 = new File(Compile.TEMP_PATH + File.separator + "CheckExercise", "output2.output");
+                File workarea = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("/WEB-INF"), Utils.exerciseworkarea);
+                try {
+                    Files.deleteIfExists(out1.toPath());
+                    out1.createNewFile();
+                    Files.deleteIfExists(out2.toPath());
+                    out2.createNewFile();
+                    String output1 = "";//c.run((in == null) ? null: new File(in), out1, c.getPath());
+                    c.compile();
+                    Compile.executeProgram("java", exercise.toString(),
+                            c.getPath(), in, out1.getAbsolutePath());
+                    String output2 = "";
+                    Compile.executeProgram("java", exercise.toString(),
+                            workarea.getAbsolutePath(), in, out2.getAbsolutePath());
+                    BufferedReader br = new BufferedReader(new FileReader(out1));
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        output1 += line + System.getProperty("line.separator");
+                    }
+                    br = new BufferedReader(new FileReader(out2));
+                    while ((line = br.readLine()) != null) {
+                        output2 += line + System.getProperty("line.separator");
+                    }
+                    System.out.println(output1);
+                    System.out.println(output2);
+                    if (!output1.equals(output2)) {
+                        int iterator = 0;
+                        while (output1.charAt(iterator) == output2.charAt(iterator)) {
+                            iterator++;
+                        }
+                        StringBuilder userHighlightedOutput = new StringBuilder(output1);
+                        StringBuilder HisHighlightedOutput = new StringBuilder(output2);
+                        String replaceUser = "<span style=\"background-color:red;\">" + output1.charAt(iterator) + "</span>";
+                        String replaceHis = "<span style=\"background-color:red;\">" + output2.charAt(iterator) + "</span>";
+                        userHighlightedOutput.replace(iterator, iterator + 1, replaceUser);
+                        HisHighlightedOutput.replace(iterator, iterator + 1, replaceHis);
+                        setGradeResult("<br/>Your output:<br/><pre>"+userHighlightedOutput + "</pre><br/>The correct output:<br/><pre>" + HisHighlightedOutput + "</pre>");
+                        return;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+            c.cleanUp();
+            setGradeResult("<br/>Your program is correct.");
+        } else {
+            setGradeResult("<br/>This exercise is not gradable.");
         }
-        c.cleanUp();
-        setGradeResult("Correct!");
 
     }
 
@@ -238,7 +271,7 @@ public class CheckExerciseBean implements Serializable {
     }
 
     public String getProgram() {
-        return (program != null) ? program: "";
+        return (program != null) ? program : "";
     }
 
     public void setProgram(String program) {
@@ -324,7 +357,7 @@ public class CheckExerciseBean implements Serializable {
     public void setChapter(String chapter) {
         this.chapter = chapter;
     }
-    
+
     public String getOutputCommandText() {
         return outputCommandText;
     }

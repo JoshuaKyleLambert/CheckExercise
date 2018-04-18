@@ -131,4 +131,4 @@ Grading For the Team Project:
 
 This is a preview of the automatic assignment check function.
 
-![alt text](https://thumbs.gfycat.com/ThatFineKob-size_restricted.gif)
+![alt text](https://thumbs.gfycat.com/DistantAcademicAsiantrumpetfish-max-14mb.gif)
